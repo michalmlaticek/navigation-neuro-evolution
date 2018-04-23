@@ -94,7 +94,7 @@ if load_flag==0
    species_record(1).number_individuals=1;
 
    %Loop through rest of individuals and either assign to existing species or create new species and use first individual of new species as reference
-   for index_individual=2:size(population,2);
+   for index_individual=2:size(population,2)
       assigned_existing_species_flag=0;
       new_species_flag=0;
       index_species=1;
@@ -141,7 +141,8 @@ while generation<maxgeneration & flag_solution==0
    population=xor_experiment(population);
    %population=fulladder_experiment(population);
    
-   generation
+   generation
+
    %compute mean and max raw fitnesses in each species and store in species_record.generation_record
    max_fitnesses_current_generation=zeros(1,size(species_record,2));
 
@@ -190,7 +191,8 @@ while generation<maxgeneration & flag_solution==0
    end
    max_overall_fitness=[max_overall_fitness,[max(c(3,:).*(c(1,:)==generation));generation]];
    maximale_fitness=max(c(3,:).*(c(1,:)==generation))
-   if maximale_fitness>15.6025
+   if maximale_fitness>15.6025
+
       flag_solution=1;
    end
        

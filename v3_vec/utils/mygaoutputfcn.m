@@ -73,7 +73,7 @@ function [state,options,optchanged] = mygaoutputfcn(options,state,flag)
 
 global experiment
 global global_states
-global draw
+global logger
 
 optchanged = false;
 
@@ -81,7 +81,8 @@ switch flag
  case 'init'
         disp('Starting the algorithm');
     case {'iter','interrupt'}
-        global_states{end+1} = state;
+        logger.debug(sprintf('Generation :%d', state.Generation));
+        %global_states{end+1} = state;
         save(sprintf('logs/%s/state_%d', experiment, state.Generation), 'state');
     case 'done'
         disp('Performing final task');

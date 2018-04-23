@@ -4,10 +4,10 @@ classdef World < handle
         cmap
         robots
         obstacleValue
-        robotBodyValue
-        robotSensorValue
         freeSpaceValue
+        startValue
         targetValue
+        robotColorValues
     end
     
     methods
@@ -16,17 +16,27 @@ classdef World < handle
             world.cmap = [
                 0 0 0; ... % obstacle color
                 1 1 1; ... % free color
-                220/255 220/255 200/255; ... % robot color
-                30/255 144/255 255/255; ...  % robot direction line color
-                1 0 0 ... % target
-                ]; 
+                0 0 1; ... % start color
+                1 0 0 ... % target                
+                ];
             world.obstacleValue = 0;
             world.freeSpaceValue = 1;
-            world.robotBodyValue = 2;
-            world.robotSensorValue = 3;
-            world.targetValue = 4;
+            world.startValue = 2;
+            world.targetValue = 3;
             
             world.robots = robots;
+            
+            world.robotColorValues = {};
+            
+            for i = 1: length(robots)
+                r_color = [i i i] / 255;
+                %s_color = [i i i] * 2 / 255;
+               world.cmap = [world.cmap; r_color];
+               world.robotColorValues{end+1}.body = i + 4;
+               %world.robotSensorValue{end+1}.sensor = i + 5;
+            end
+            
+            
         end
         
         function addObstacle(world, indexes)
@@ -60,12 +70,12 @@ classdef World < handle
         function map = drawRobot(world, map, mapRobot)
             robotBody = mapRobot.getRobotBody();
             for i = 1:length(robotBody)
-                if robotBody(1, i) > 0 && ...
-                    robotBody(2, i) > 0 && ...
-                    robotBody(1, i) < size(map, 1) && ...
-                    robotBody(2, i) < size(map, 2)
-                    map(robotBody(1,i),robotBody(2, i)) = world.robotBodyValue;
-                end
+                    if robotBody(1, i) > 0 && ...
+                        robotBody(2, i) > 0 && ...
+                        robotBody(1, i) < size(map, 1) && ...
+                        robotBody(2, i) < size(map, 2)
+                        map(robotBody(1,i),robotBody(2, i)) = world.robotColorValues{;
+                    end
             end %for
             
             sensorLines = mapRobot.getSensorLines();

@@ -1,5 +1,5 @@
 %addpath('..','../../maps','../classes','../utils');
-addpath('../maps','classes','utils', 'logs');
+addpath('../maps','classes','utils', '../logs');
 %load('../../maps/map2');
 
 global experiment
@@ -27,7 +27,7 @@ sensorLen = 30;
 maxSpeed = 10;
 
 duration = 1;
-stepCount = 2500;
+stepCount = 5000;
 
 robot = MapRobot(1, 0, initPosition, radius, sensorAngles, sensorLen, maxSpeed, net, targetPosition);
 % wbs = generateWBs(netLayout);

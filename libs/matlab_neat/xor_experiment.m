@@ -4,7 +4,7 @@
 %% developed by Kenneth Stanley (kstanley@cs.utexas.edu) & Risto Miikkulainen (risto@cs.utexas.edu)
 %% Coding by Christian Mayr (matlab_neat@web.de)
 
-function population_plus_fitnesses=xor_experiment(population);
+function population_plus_fitnesses=xor_experiment(population)
 population_plus_fitnesses=population;
 no_change_threshold=1e-3; %threshold to judge if state of a node has changed significantly since last iteration
 number_individuals=size(population,2);

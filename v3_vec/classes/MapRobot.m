@@ -15,7 +15,6 @@ classdef MapRobot < Robot
         
         angleErrNorm
         distErrNorm
-        distErr
     end
     
     methods
@@ -33,8 +32,7 @@ classdef MapRobot < Robot
             robot.target = target;
             % for now let's do static map size
 %             robot.distErrNorm = robot.getTargetDistance(target)/sqrt(sum(size(map).^2));
-            robot.distErr = robot.getTargetDistance(target);
-            robot.distErrNorm = robot.distErr/223.4457;
+            robot.distErrNorm = robot.getTargetDistance(target)/223.4457;
             robot.angleErrNorm = robot.getAngleError(target)/(2*pi);
         end
         
@@ -142,11 +140,7 @@ classdef MapRobot < Robot
         function sensorReading = readSensor(mapRobot, sensorCoordinates, map)
             sensorReading = 2*mapRobot.sensorLen;
             for i = 1:length(sensorCoordinates)
-               if sensorCoordinates(1, i) < 1 || ...
-                       sensorCoordinates(2, i) < 1 || ...
-                       sensorCoordinates(1, i) > size(map, 1) || ...
-                       sensorCoordinates(2, i) > size(map, 2) || ...
-                       map(sensorCoordinates(1, i), sensorCoordinates(2, i)) == 0
+               if map(sensorCoordinates(1, i), sensorCoordinates(2, i)) == 0
                     sensorReading = mapdistance(mapRobot.position, sensorCoordinates(:, i));
                     break;
                end % if
