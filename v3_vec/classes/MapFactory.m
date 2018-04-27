@@ -19,6 +19,12 @@ classdef MapFactory
             plane(:, width-border_width:width) = 0; 
             plane(height-border_width:height, :) = 0;
         end
+        
+        function plane = from_img(img_path)
+            plane = imread(img_path);
+            plane = plane(:,:, 1);
+            plane = plane / 255; 
+        end
     end
 end
 

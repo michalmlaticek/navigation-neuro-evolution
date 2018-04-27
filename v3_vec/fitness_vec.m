@@ -1,4 +1,4 @@
-function fit = fitness_vec(weights, ...
+function [fits, dists, collis] = fitness_vec(weights, ...
     map, ...
     net, ...
     robot, ...
@@ -9,11 +9,9 @@ function fit = fitness_vec(weights, ...
     step_count, ...
     cmap)
 
-global logger
 global draw
 global draw_refresh_rate
-
-logger.debug("Next generation")
+global logger
 
 weights = weights';
 pop_size = size(weights, 2);
@@ -23,10 +21,11 @@ v = {};
 max_distance = sqrt(size(map, 1)^2 + size(map, 2)^2);
 
 v.nets = {};
+logger.debug('Initializing networks');
 for n = 1:size(weights, 2)
     v.nets{end+1} = setwb(net, weights(:, n));
 end
-
+logger.debug('Initializing remaining params');
 v.robot_angles = zeros(1, pop_size) + init_angles;
 v.sensor_angles = zeros(length(robot.sensorAngles), pop_size) ...
     + to_minus_pi_pi(robot.sensorAngles);
@@ -46,11 +45,15 @@ if draw
    pause(draw_refresh_rate);
 end
 
+logger.debug('Starting steps');
 for step = 1:step_count
+    %logger.debug('Preparing inputs')
    net_inputs = create_inputs(v.sensor_lines, robot.sensorLen, ...
        v.norm_angle_errors, v.norm_target_distances, map);
-   
+   %logger.debug('Calculating outputs (running networks)')
    net_outputs = eval_nets(v.nets, net_inputs);
+   
+   %logger.debug('Updating inner params')
    [d_angles, d_speeds] = extract_outputs(net_outputs, robot.maxSpeed);
    
    [v.robot_angles, v.sensor_angles] = rotate(v.robot_angles, v.sensor_angles, d_angles);
@@ -68,9 +71,9 @@ for step = 1:step_count
         pause(draw_refresh_rate);
    end
 end % for step
-
-fit = calc_fitnesses(v.target_distances, v.collisions);
-
+dists = v.target_distances;
+collis = v.collisions;
+fits = calc_fitnesses(v.target_distances, v.collisions);
 end
 
 function [colision_indicators, target_indicators] = get_collisions_and_targets(map, body, positions, target)
@@ -78,7 +81,7 @@ function [colision_indicators, target_indicators] = get_collisions_and_targets(m
     target_indicators = zeros(1, size(positions, 2));
     for i = 1:size(positions, 2)
         b = body + positions(:, i);
-        if is_collision(map, b)
+        if is_collision(round(b), map)
             colision_indicators(1, i) = 1;
         elseif is_target(positions(:, i), target)
             target_indicators(1, i) = 1;
@@ -208,6 +211,7 @@ function normalized_readings = normalize_sensor_readings(readings, sensor_len)
 end
 
 function bool_result = is_collision(body, map)
+    bool_result = false;
     for i = 1:size(body, 2)
        if body(1, i) > size(map, 1) || ...
            body(2, i) > size(map, 2) || ...
@@ -224,14 +228,14 @@ function bool_result = is_target(robot_position, target)
     bool_result = isequal(round(robot_position), target);
 end
 
-function fitnesses = handle_remaining(net_ids, norm_distance, norm_angle_errs, fitnesses)
-    for i = 1:length(net_ids)
-       fitnesses(net_ids(i)) = cacl_fitness(norm_distance, ...
-           norm_angle_errs, ...
-           1, ...
-            1)
-    end
-end
+%function fitnesses = handle_remaining(net_ids, norm_distance, norm_angle_errs, fitnesses)
+%    for i = 1:length(net_ids)
+%       fitnesses(net_ids(i)) = cacl_fitness(norm_distance, ...
+%           norm_angle_errs, ...
+%           1, ...
+%            1)
+%    end
+%end
 
 %function fit = calc_fitness(norm_distance, norm_angle_err, alfa, beta)
 %    angle_error = abs(norm_angle_err - 0.5);
@@ -239,5 +243,5 @@ end
 %end
 
 function fitnesses = calc_fitnesses(distances, collisions)
-    fitnesses = distances + collisions;
+    fitnesses = distances + collisions*10;
 end

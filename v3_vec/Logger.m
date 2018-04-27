@@ -17,7 +17,11 @@ classdef Logger
         
         function log = debug(log, msg)
             fprintf(log.fid, '%s: %s\n', datestr(now, 0), msg);
-            disp(msg);
+            fprintf('%s: %s\n', datestr(now, 0), msg);
+        end
+        
+        function log = matrix(log, mat)
+           dlmwrite(log.fid,M,'-append') 
         end
         
         function log = close(log)
