@@ -3,29 +3,31 @@ classdef Logger
     %   Detailed explanation goes here
     
     properties
-        fid
+        folder
+        name
+        full_path
     end
     
     methods
-        function log = Logger(folderPath, logName)
-            mkdir(folderPath)
-            log.fid = fopen(fullfile(folderPath, logName), 'a');
-            if log.fid == -1
-                error('Cannot open log file.');
-            end
+        function log = Logger(log_folder, log_name)
+            mkdir(log_folder)
+            log.folder = log_folder;
+            log.name = log_name;
+            log.full_path = fullfile(log_folder, log_name);
         end
         
         function log = debug(log, msg)
-            fprintf(log.fid, '%s: %s\n', datestr(now, 0), msg);
+            fid = fopen(log.full_path, 'a');
+            if fid == -1
+                error('Cannot open log file.');
+            end
+            fprintf(fid, '%s: %s\n', datestr(now, 0), msg);
             fprintf('%s: %s\n', datestr(now, 0), msg);
+            fclose(fid);
         end
         
         function log = matrix(log, mat)
-           dlmwrite(log.fid,M,'-append') 
-        end
-        
-        function log = close(log)
-            fclose(log.fid);
+           dlmwrite(log.fid,M,'-append');
         end
     end
 end

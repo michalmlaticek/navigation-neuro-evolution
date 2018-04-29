@@ -243,5 +243,5 @@ end
 %end
 
 function fitnesses = calc_fitnesses(distances, collisions)
-    fitnesses = distances + collisions*10;
+    fitnesses = distances + collisions*100;
 end
