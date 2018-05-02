@@ -1,8 +1,7 @@
-function evolution_2()
 clc
 clear
-rng_id = 5;
-%rng_id = round(now*1000);
+
+rng_id = round(now*1000);
 run_id = sprintf('%9.0f', rng_id);
 
 rng(rng_id)
@@ -45,11 +44,11 @@ logger.debug(sprintf('Init angle: %d', settings.initAngle));
 settings.duration = 1;
 logger.debug(sprintf('Duration: %d', settings.duration));
 
-settings.step_count = 20;
+settings.step_count = 250;
 logger.debug(sprintf('Step count: %d', settings.step_count));
-settings.gen_count = 3;
+settings.gen_count = 1000;
 logger.debug(sprintf('Gen count: %d', settings.gen_count));
-settings.pop_count = 100;
+settings.pop_count = 150;
 logger.debug(sprintf('Pop size: %d', settings.pop_count));
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -90,7 +89,7 @@ Sigma=Space(2,:)/50;%prac ovny priestor mutacie
 
 for gen = 1:settings.gen_count
     logger.debug(sprintf('Gen: %d: ',gen));
-    [Fit, dists, collis] = fitness_vec(Pop, settings.map, settings.net, ...
+    [Fit, dists, collis, path_lens] = fitness_vec_path(Pop, settings.map, settings.net, ...
         settings.robot, settings.body, settings.initPosition, ...
         settings.targetPosition, settings.initAngle, settings.step_count, ...
         settings.cmap, max_distance);
@@ -99,7 +98,7 @@ for gen = 1:settings.gen_count
     data.Fit = Fit;
     data.dists = dists;
     data.collis = collis;
-    %data.path_lens = path_lens;
+    data.path_lens = path_lens;
     save(sprintf('logs/%s/out-data-gen-%d', experiment, gen), 'data');
     [BestGenome, BestFit]=selbest(Pop,Fit',[1,1,1,1,1]);
     logger.debug(sprintf('Best fits: [%f %f %f %f %f]', BestFit));
@@ -112,5 +111,4 @@ for gen = 1:settings.gen_count
     Pop=[BestGenome;Old;Work1;Work2];
 end
 logger.debug(sprintf('End of simulation: %s', experiment));
-end
 

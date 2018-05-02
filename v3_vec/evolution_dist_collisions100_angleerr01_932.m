@@ -1,8 +1,8 @@
-function evolution_2()
+function evolution_dist_collisions100_angleerr01_932()
 clc
 clear
-rng_id = 5;
-%rng_id = round(now*1000);
+%rng_id = 5;
+rng_id = round(now*1000);
 run_id = sprintf('%9.0f', rng_id);
 
 rng(rng_id)
@@ -11,7 +11,7 @@ global draw
 global draw_refresh_rate
 global logger
 
-experiment = run_id;
+experiment = sprintf('evolution_dist_collisions100_angleerr01_932/%s', run_id);
 draw = false;
 draw_refresh_rate = 0.001;
 
@@ -32,22 +32,22 @@ settings.initPosition = reshape([40;40], [1, 1, 2]);
 logger.debug('Start position: [40, 40]');
 settings.targetPosition = reshape([210; 210], [1, 1, 2]);
 logger.debug('End position: [210, 210]');
-settings.radius = 10;
+settings.radius = 15;
 logger.debug(sprintf('Radius: %d', settings.radius));
 settings.sensorAngles = [-60; -40; -20; 0; 20; 40; 60];
 logger.debug('Sensor angles: [-61 -40 -20 0 20 40 60]');
 settings.sensorLen = 40;
 logger.debug(sprintf('Sensor len: %d', settings.sensorLen));
-settings.maxSpeed = 10;
+settings.maxSpeed = 15;
 logger.debug(sprintf('Max speed: %d', settings.maxSpeed));
 settings.initAngle = 0;
 logger.debug(sprintf('Init angle: %d', settings.initAngle));
 settings.duration = 1;
 logger.debug(sprintf('Duration: %d', settings.duration));
 
-settings.step_count = 20;
+settings.step_count = 300;
 logger.debug(sprintf('Step count: %d', settings.step_count));
-settings.gen_count = 3;
+settings.gen_count = 1500;
 logger.debug(sprintf('Gen count: %d', settings.gen_count));
 settings.pop_count = 100;
 logger.debug(sprintf('Pop size: %d', settings.pop_count));
@@ -62,13 +62,14 @@ settings.map = MapFactory.from_img('../maps/map_4_path_2.png');
 max_distance = sqrt(size(settings.map, 1)^2 + size(settings.map, 2)^2);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-settings.net = initNet(settings.netLayout);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Robot Settings
 settings.robot = Robot(settings.radius, settings.sensorAngles, ...
-    settings.sensorLen, settings.maxSpeed, settings.net);
+    settings.sensorLen, settings.maxSpeed, {});
 body = get_body(settings.radius)';
 settings.body = reshape(body, [length(body), 1, 2]);
 save(sprintf('logs/%s/settings', experiment), 'settings')
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % start with new (random init)
 %Pop = generateWBs(settings.netLayout, settings.pop_count)';
@@ -90,7 +91,7 @@ Sigma=Space(2,:)/50;%prac ovny priestor mutacie
 
 for gen = 1:settings.gen_count
     logger.debug(sprintf('Gen: %d: ',gen));
-    [Fit, dists, collis] = fitness_vec(Pop, settings.map, settings.net, ...
+    [Fit, dists, collis, angles] = fitness_dist_collisions100_angleerr01(Pop, settings.map, settings.netLayout, ...
         settings.robot, settings.body, settings.initPosition, ...
         settings.targetPosition, settings.initAngle, settings.step_count, ...
         settings.cmap, max_distance);
@@ -99,7 +100,7 @@ for gen = 1:settings.gen_count
     data.Fit = Fit;
     data.dists = dists;
     data.collis = collis;
-    %data.path_lens = path_lens;
+    data.angles = angles;
     save(sprintf('logs/%s/out-data-gen-%d', experiment, gen), 'data');
     [BestGenome, BestFit]=selbest(Pop,Fit',[1,1,1,1,1]);
     logger.debug(sprintf('Best fits: [%f %f %f %f %f]', BestFit));

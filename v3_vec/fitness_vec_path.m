@@ -1,4 +1,4 @@
-function [fits, dists, collis] = fitness_vec(weights, ...
+function [fits, target_distances, collisions, path_lens] = fitness_vec_path(weights, ...
     map, ...
     net, ...
     robot, ...
@@ -17,8 +17,8 @@ global logger
 weights = weights';
 pop_size = size(weights, 2);
 
-logger.debug('Initializing networks');
 nets = cell(1,pop_size);
+logger.debug('Initializing networks');
 for n = 1:size(weights, 2)
     nets{n} = setwb(net, weights(:, n));
 end
@@ -36,6 +36,7 @@ norm_angle_errors = normalize_angles(angle_errors);
 target_distances = euc_dist_3d(robot_positions, target_positions);
 norm_target_distances = normalize_distance(target_distances, max_distance);
 collisions = zeros(1, pop_size);
+path_lens = zeros(1, pop_size);
 
 if draw
    draw_map(map, cmap, robot_bodies, sensor_lines, start_positions, target_positions)
@@ -62,21 +63,21 @@ for step = 1:step_count
    sensor_lines = get_sensor_lines(sensor_angles, robot_positions, robot);
    [collis, targets] = get_collisions_and_targets(map, body, robot_positions, target_positions);
    collisions = collisions + collis;
+   path_lens = path_lens + d_speeds;
    
    if draw
         draw_map(map, cmap, robot_bodies, sensor_lines, start_positions, target_positions)
         pause(draw_refresh_rate);
    end
 end % for step
-dists = target_distances;
-collis = collisions;
-fits = calc_fitnesses(target_distances, collisions);
+
+fits = calc_fitnesses(target_distances, collisions, path_lens);
 end
 
 function [colision_indicators, target_indicators] = get_collisions_and_targets(map, body, positions, target)
     colision_indicators = zeros(1, size(positions, 2));
     target_indicators = zeros(1, size(positions, 2));
-    parfor i = 1:size(positions, 2)
+    for i = 1:size(positions, 2)
         b = body + positions(:, i);
         if is_collision(round(b), map)
             colision_indicators(1, i) = 1;
@@ -95,7 +96,7 @@ end
 
 function outs = eval_nets(nets, ins)
     outs = zeros(nets{1}.outputs{length(nets{1}.layers)}.size, length(nets)); 
-    parfor i = 1: size(ins, 2)
+    for i = 1: size(ins, 2)
         outs(:, i) = nets{i}(ins(:, i));
     end
 end
@@ -129,13 +130,13 @@ end
 function lines_lists = calc_line_coordinates(start_xys, end_xys)
     start_xys = round(start_xys);
     end_xys = round(end_xys);
-    lines_lists = cell(1, size(start_xys, 2));
+    lines_lists = {};
     for col = 1:size(start_xys, 2)
-        lines = cell(1, size(start_xys, 1));
+        lines = {};
         for row = 1:size(start_xys, 1)
-            lines{row} = bresenham(start_xys(row, col, :), end_xys(row, col, :));
+            lines{end+1} = bresenham(start_xys(row, col, :), end_xys(row, col, :));
         end % for row
-        lines_lists{col} = lines;
+        lines_lists{end+1} = lines;
     end % for col
 end
 
@@ -186,7 +187,7 @@ function readings = read_sensors(sensor_lines, sensor_len, map)
     sensor_count = length(sensor_lines{1});
     
     readings = zeros(sensor_count, robot_count) + sensor_len;
-    parfor robot = 1:robot_count
+    for robot = 1:robot_count
         for sensor = 1:sensor_count
             xy = sensor_lines{robot}{sensor};
             for line_point = 1:size(xy, 2)
@@ -239,6 +240,6 @@ end
 %    fit = alfa * beta * (angle_error + norm_distance*10) * -1;
 %end
 
-function fitnesses = calc_fitnesses(distances, collisions)
-    fitnesses = distances + collisions*100;
+function fitnesses = calc_fitnesses(distances, collisions, path_lens)
+    fitnesses = distances + collisions*100 + path_lens;
 end

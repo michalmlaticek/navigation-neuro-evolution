@@ -1,6 +1,6 @@
-function [fits, dists, collis] = fitness_vec(weights, ...
+function [fits, target_distances, collisions, combined_angle_errs] = fitness_dist_collisions100(weights, ...
     map, ...
-    net, ...
+    net_layout, ...
     robot, ...
     body, ...
     start_positions, ...
@@ -18,10 +18,7 @@ weights = weights';
 pop_size = size(weights, 2);
 
 logger.debug('Initializing networks');
-nets = cell(1,pop_size);
-for n = 1:size(weights, 2)
-    nets{n} = setwb(net, weights(:, n));
-end
+nets = init_nets(net_layout, weights);
 logger.debug('Initializing remaining params');
 robot_angles = zeros(1, pop_size) + init_angles;
 sensor_angles = zeros(length(robot.sensorAngles), pop_size) ...
@@ -36,6 +33,7 @@ norm_angle_errors = normalize_angles(angle_errors);
 target_distances = euc_dist_3d(robot_positions, target_positions);
 norm_target_distances = normalize_distance(target_distances, max_distance);
 collisions = zeros(1, pop_size);
+combined_angle_errs = zeros(1, pop_size);
 
 if draw
    draw_map(map, cmap, robot_bodies, sensor_lines, start_positions, target_positions)
@@ -55,32 +53,35 @@ for step = 1:step_count
    
    [robot_angles, sensor_angles] = rotate(robot_angles, sensor_angles, d_angles);
    [robot_positions, robot_bodies] = translate(robot_positions, body, robot_angles, d_speeds);
-   angle_errors = get_angle_errors(robot_positions, robot_angles, target_positions);
-   norm_angle_errors = normalize_angles(angle_errors);
-   target_distances = euc_dist_3d(robot_positions, target_positions);
-   norm_target_distances = normalize_distance(target_distances, max_distance);
    sensor_lines = get_sensor_lines(sensor_angles, robot_positions, robot);
-   [collis, targets] = get_collisions_and_targets(map, body, robot_positions, target_positions);
-   collisions = collisions + collis;
    
    if draw
         draw_map(map, cmap, robot_bodies, sensor_lines, start_positions, target_positions)
         pause(draw_refresh_rate);
    end
+   
+   angle_errors = get_angle_errors(robot_positions, robot_angles, target_positions);
+   norm_angle_errors = normalize_angles(angle_errors);
+   target_distances = euc_dist_3d(robot_positions, target_positions);
+   norm_target_distances = normalize_distance(target_distances, max_distance);
+   
+   [collis, targets] = get_collisions_and_targets(map, robot_bodies, robot_positions, target_positions);
+   
+   % tracking for fitness
+   collisions = collisions + collis;
+   combined_angle_errs = combined_angle_errs + angle_errors.^2;
 end % for step
-dists = target_distances;
-collis = collisions;
-fits = calc_fitnesses(target_distances, collisions);
+
+fits = calc_fitnesses(target_distances, collisions, combined_angle_errs);
 end
 
-function [colision_indicators, target_indicators] = get_collisions_and_targets(map, body, positions, target)
+function [colision_indicators, target_indicators] = get_collisions_and_targets(map, bodies, positions, target)
     colision_indicators = zeros(1, size(positions, 2));
     target_indicators = zeros(1, size(positions, 2));
-    parfor i = 1:size(positions, 2)
-        b = body + positions(:, i);
-        if is_collision(round(b), map)
+    for i = 1:size(positions, 2)
+        if is_collision(bodies(:, i, :), map)
             colision_indicators(1, i) = 1;
-        elseif is_target(positions(:, i), target)
+        elseif is_target(round(positions(:, i)), target)
             target_indicators(1, i) = 1;
         end
     end
@@ -93,16 +94,11 @@ function ins = create_inputs(sensor_lines, sensor_len, angle_errors, target_dist
     ins = [normalized_readings; angle_errors; target_distances];
 end
 
-function outs = eval_nets(nets, ins)
-    outs = zeros(nets{1}.outputs{length(nets{1}.layers)}.size, length(nets)); 
-    parfor i = 1: size(ins, 2)
-        outs(:, i) = nets{i}(ins(:, i));
-    end
-end
-
-function [d_angles, d_speed] = extract_outputs(outs, max_speed)
-    d_angles = (outs(1, :) * 2 * pi) - pi;
-    d_speed = outs(2, :) * max_speed;
+function [d_angles, d_speeds] = extract_outputs(outs, max_speed)
+    %d_angles = (outs(1, :) * 2 * pi) - pi;
+    %d_speeds = outs(2, :) * max_speed;
+    d_angles = outs(1, :) * pi;
+    d_speeds = (outs(2, :) + 1) * (max_speed/2);
 end
 
 function [robot_angles, sensor_angles] = rotate(robot_angles, sensor_angles, rotation_angles)
@@ -186,7 +182,7 @@ function readings = read_sensors(sensor_lines, sensor_len, map)
     sensor_count = length(sensor_lines{1});
     
     readings = zeros(sensor_count, robot_count) + sensor_len;
-    parfor robot = 1:robot_count
+    for robot = 1:robot_count
         for sensor = 1:sensor_count
             xy = sensor_lines{robot}{sensor};
             for line_point = 1:size(xy, 2)
@@ -209,12 +205,12 @@ end
 
 function bool_result = is_collision(body, map)
     bool_result = false;
-    for i = 1:size(body, 2)
-       if body(1, i) > size(map, 1) || ...
-           body(2, i) > size(map, 2) || ...
-           body(1, i) < 1 || ...
-           body(2, i) < 1 || ...
-           map(body(1, i), body(2, i)) == 0
+    for i = 1:size(body, 1)
+       if body(i, 1, 1) > size(map, 1) || ...
+           body(i, 1, 2) > size(map, 2) || ...
+           body(i, 1, 1) < 1 || ...
+           body(i, 1, 2) < 1 || ...
+           map(body(i, 1, 1), body(i, 1, 2)) == 0
             bool_result = true;
             break;
        end
@@ -239,6 +235,6 @@ end
 %    fit = alfa * beta * (angle_error + norm_distance*10) * -1;
 %end
 
-function fitnesses = calc_fitnesses(distances, collisions)
+function fitnesses = calc_fitnesses(distances, collisions, combined_angle_errs)
     fitnesses = distances + collisions*100;
 end

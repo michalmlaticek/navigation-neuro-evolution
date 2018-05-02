@@ -26,6 +26,7 @@ function myNet = initNet(netLayout)
         myNet.layers{k}.transferFcn = 'tansig';
     end % for k
     %myNet.layers{layerCount}.transferFcn = 'logsig';
-    myNet.layers{layerCount}.transferFcn = 'roundedlogsig';
+    %myNet.layers{layerCount}.transferFcn = 'roundedlogsig';
+    myNet.layers{layerCount}.transferFcn = 'hardlogsig';
 end
 
