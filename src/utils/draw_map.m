@@ -1,7 +1,12 @@
-function draw_map(map, cmap, bodies, sensor_lines, start, target)
+function draw_map(map, cmap, bodies, sensor_lines, start, target, ...
+    collis_idx)
     map2draw = map;
     for r = 1:size(bodies, 2) % for each robot
-        map2draw = draw_body(map2draw, bodies(:, r, :), r + 4);
+        if exist('collis_idx', 'var') && collis_idx(r) > 0
+            map2draw = draw_body(map2draw, bodies(:, r, :), 4);
+        else
+            map2draw = draw_body(map2draw, bodies(:, r, :), r + 4);
+        end
         map2draw = draw_sensors(map2draw, sensor_lines{r}, r + 4);
     end
     
@@ -18,7 +23,7 @@ function map = draw_body(map, body, c_idx)
                 body(i, 1, 2) > 0 && ...
                 body(i, 1, 1) <= size(map, 1) && ...
                 body(i, 1, 2) <= size(map, 2)
-            map(body(i, 1, 1), body(i, 1, 2)) = c_idx; 
+            map(body(i, 1, 1), body(i, 1, 2)) = c_idx;            
         end            
     end
 end

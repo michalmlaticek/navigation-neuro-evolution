@@ -18,7 +18,7 @@ function a_evolution()
     global draw_refresh_rate; draw_refresh_rate = 0.001;
     global logger; logger = Logger(log_folder, 'experiment.log');    
     
-    logger.debug('Coppining src files to log folder')
+    logger.debug('Coppining src files to log folder');
     copy_src([{'a_evolution.m'}, {'a_fitness.m'}, {'a_settings.m'}, ...
         {'a_metric.m'}, {'a_simulation.m'}, {'add_paths.m'}], ...
         log_folder);
@@ -38,24 +38,26 @@ function a_evolution()
 
     for gen = 1:settings.gen_count
         logger.debug(sprintf('Gen: %d: ',gen));
+
         data = a_fitness(Pop, settings.map, settings.netLayout, ...
             settings.robot, settings.body, settings.initPosition, settings.targetPosition, ...
             settings.initAngle, settings.step_count, settings.cmap, settings.max_distance);
+
+        [best_fit, best_fit_idx] = min(data.fits, [], 2);
+        logger.debug(sprintf('Best Fit: %f    Distance: %f    Collision: %d    Path len: %f    Rotation: %d', ...
+            best_fit, data.distances(best_fit_idx), data.collisions(best_fit_idx), ...
+            data.path_lens, data.rotations));
+        
         save(sprintf('%s/out-data-gen-%d', log_folder, gen), 'data');
         
-        %[best_fit, best_fit_idx] = min(data.fits, [], 2);
-        %logger.debug(sprintf('Best Fit: %f    Distance: %f    Collision: %d    Path len: %f    Rotation: %d', ...
-        %    best_fit, data.distances(best_fit_idx), data.collisions(best_fit_idx), ...
-        %    data.path_lens, data.rotations));
-
         Fit = data.fits;
         BestGenome=selbest(Pop,Fit',[1,1,1,1,1]);
         Old=seltourn(Pop,Fit',15);
         Work1=selsus(Pop,Fit',30);
-        Work2=seltourn(Pop,Fit',50);
+        Work2=seltourn(Pop,Fit',100);
         Work1=crossov(Work1,1,0);
-        Work2=muta(Work2,0.1,Sigma,Space);
-        Work2=mutx(Work2,0.1,Space);
+        Work2=muta(Work2,0.2,Sigma,Space);
+        Work2=mutx(Work2,0.2,Space);
         Pop=[BestGenome;Old;Work1;Work2];
     end
     logger.debug(sprintf('End of simulation: %s', experiment));
