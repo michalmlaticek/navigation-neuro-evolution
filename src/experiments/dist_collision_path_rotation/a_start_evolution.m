@@ -12,8 +12,8 @@ function a_start_evolution()
     experiment = sprintf('%s/%s', experiment_root, run_id);
     log_folder = sprintf('../../../logs/%s', experiment);
     
-    global draw; draw = false;
-    global draw_refresh_rate; draw_refresh_rate = 0.001;
+    global draw; draw = true;
+    global draw_refresh_rate; draw_refresh_rate = 0.1;
     global logger; logger = Logger(log_folder, 'experiment.log');    
     
     logger.debug('Coppining src files to log folder');

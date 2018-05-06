@@ -98,10 +98,10 @@ function colision_indicators = get_collisions(map, ...
         end
         % if step was bigger than half of radius, check also the midpoint
         % should help to avoid not chathing collisions on corners
-        checkpoints = round(speeds(i) / (radius/2));
-        cp_dxy =  round(dxys(i) / checkpoints);
+        checkpoints = floor(speeds(i) / (radius/2));
+        cp_dxy =  round(dxys(1, i, :) / (checkpoints+1));
         for cp = 1:checkpoints
-            cp_bodies = bodies(:, i, :) - (cp_dxy * i);
+            cp_bodies = bodies(:, i, :) - (cp_dxy * cp);
             if is_collision(cp_bodies, map)
                 colision_indicators(1, i) = 1;
             end
