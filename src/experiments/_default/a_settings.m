@@ -4,6 +4,7 @@ function settings = a_settings()
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%
     settings = {};
     settings.netLayout = [9 3 2];
+    settings.genom_len = calculateWBCount(settings.netLayout);
     init_positions = [23 23; 220 30];
     target_positions = [220 30; 25 225];
     settings.initPosition = reshape(init_positions, [1, size(init_positions, 2), 2]);
@@ -28,5 +29,7 @@ function settings = a_settings()
     body = get_body(settings.radius)';
     settings.body = reshape(body, [length(body), 1, 2]);
     settings.M = 1;
+    settings.space=[-settings.M*ones(1,settings.genom_len); settings.M*ones(1,settings.genom_len)];  % working space
+    settings.sigma=settings.space(2,:)/50; %mutation working space
 end
 

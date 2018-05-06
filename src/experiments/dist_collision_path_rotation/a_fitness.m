@@ -51,5 +51,10 @@ function final_data = a_fitness(...
         final_data.path_lens = final_data.path_lens + data.path_lens;
         final_data.rotations = final_data.rotations + data.rotations;
     end
+    final_data.fits = final_data.fits / size(start_positions, 2);
+    final_data.distances = final_data.distances / size(start_positions, 2);
+    final_data.collisions = final_data.collisions / size(start_positions, 2);
+    final_data.path_lens = final_data.path_lens / size(start_positions, 2);
+    final_data.rotations = final_data.rotations / size(start_positions, 2);
 end
 

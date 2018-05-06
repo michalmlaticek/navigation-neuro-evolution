@@ -84,8 +84,7 @@ function data = a_fitness_path( ...
     data.distances = target_distances;
     data.collisions = collisions;
     data.path_lens = path_lens;
-    data.rotations = rotations;
-    
+    data.rotations = rotations;   
 end
 
 function colision_indicators = get_collisions(map, ...

@@ -48,16 +48,18 @@ function data = a_fitness_path( ...
     for step = 1:step_count
        net_inputs = create_inputs(sensor_lines, robot.sensorLen, ...
            norm_angle_errors, norm_target_distances, map);
-       net_outputs = eval_nets(nets, net_inputs);
+       net_outputs = eval_nets_tanh(nets, net_inputs);
 
        [d_angles, d_speeds] = extract_outputs(net_outputs, robot.maxSpeed);
 
        [robot_angles, sensor_angles] = rotate(robot_angles, sensor_angles, d_angles);
-       [robot_positions, deltas, robot_bodies] = translate(robot_positions, body, robot_angles, d_speeds);
+       [robot_positions, dxys, robot_bodies] = translate(robot_positions, body, robot_angles, d_speeds);
        sensor_lines = get_sensor_lines(sensor_angles, robot_positions, robot);
+       
+       collis = get_collisions(map, robot_bodies, robot_positions, dxys, d_speeds, robot.radius);
 
        if draw
-            draw_map(map, cmap, robot_bodies, sensor_lines, start_positions, target_positions)
+            draw_map(map, cmap, robot_bodies, sensor_lines, start_positions, target_positions, collis)
             pause(draw_refresh_rate);
        end
 
@@ -66,14 +68,12 @@ function data = a_fitness_path( ...
        target_distances = euc_dist_3d(robot_positions, target_positions);
        norm_target_distances = normalize_distance(target_distances, max_distance);
 
-       collis = get_collisions(map, robot_bodies, robot_positions, target_positions);
-
        % tracking for fitness
        collisions = collisions + collis;
        path_lens = path_lens + d_speeds;
        
        lt05 = target_distances < 0.5;
-       rotations = rotations(lt05) + abs(d_angles(lt05));
+       rotations(lt05) = rotations(lt05) + abs(d_angles(lt05));
        
        
     end % for step
@@ -84,11 +84,10 @@ function data = a_fitness_path( ...
     data.distances = target_distances;
     data.collisions = collisions;
     data.path_lens = path_lens;
-    data.rotations = rotations;
-    
+    data.rotations = rotations;   
 end
 
-function [colision_indicators, target_indicators] = get_collisions(map, ...
+function colision_indicators = get_collisions(map, ...
         bodies, target_positions, dxys, speeds, radius)
     colision_indicators = zeros(1, size(target_positions, 2));
     for i = 1:size(target_positions, 2)
@@ -97,8 +96,8 @@ function [colision_indicators, target_indicators] = get_collisions(map, ...
                 colision_indicators(1, i) = 1;
                 continue;
         end
-        % is step was bigger than half of radius, check also the midpoint
-        
+        % if step was bigger than half of radius, check also the midpoint
+        % should help to avoid not chathing collisions on corners
         checkpoints = round(speeds(i) / (radius/2));
         cp_dxy =  round(dxys(i) / checkpoints);
         for cp = 1:checkpoints
@@ -129,8 +128,8 @@ function [robot_angles, sensor_angles] = rotate(robot_angles, sensor_angles, rot
     sensor_angles = to_minus_pi_pi(sensor_angles + rotation_angles);
 end
 
-function [new_positions, deltas, new_bodies] = translate(robot_positions, robot_body, robot_angles, speeds)
-    [new_positions, deltas] = get_coordinates(robot_positions, robot_angles, speeds);
+function [new_positions, dxys, new_bodies] = translate(robot_positions, robot_body, robot_angles, speeds)
+    [new_positions, dxys] = get_coordinates(robot_positions, robot_angles, speeds);
     new_bodies = round(robot_body + new_positions);
 end
 
