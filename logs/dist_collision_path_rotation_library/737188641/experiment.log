@@ -1,0 +1,27 @@
+08-May-2018 15:23:19: Coppining src files to log folder
+08-May-2018 15:23:19: Loading settings
+08-May-2018 15:23:19: Gen: 1: 
+08-May-2018 15:23:19: Initializing networks
+08-May-2018 15:23:19: Initializing remaining params
+08-May-2018 15:23:20: Starting steps
+08-May-2018 15:28:34: Path 1:
+08-May-2018 15:28:34: Best Fit: 2263.846285    Distance: 226.384628    Collision: 0     Path len: 0.000000    Rotation: 0
+08-May-2018 15:28:34: Best Fit: 2263.846285    Distance: 226.384628    Collision: 0    Path len: 0.000000    Rotation: 0
+08-May-2018 15:28:34: Gen: 2: 
+08-May-2018 15:28:34: Initializing networks
+08-May-2018 15:28:34: Initializing remaining params
+08-May-2018 15:28:35: Starting steps
+08-May-2018 15:32:42: Path 1:
+08-May-2018 15:32:42: Best Fit: 1673.692088    Distance: 167.368542    Collision: 0     Path len: 66.677982    Rotation: 0
+08-May-2018 15:32:42: Best Fit: 1673.692088    Distance: 167.368542    Collision: 0    Path len: 66.677982    Rotation: 0
+08-May-2018 15:32:42: Gen: 3: 
+08-May-2018 15:32:42: Initializing networks
+08-May-2018 15:32:42: Initializing remaining params
+08-May-2018 15:32:42: Starting steps
+08-May-2018 15:35:51: Path 1:
+08-May-2018 15:35:51: Best Fit: 1673.692088    Distance: 167.368542    Collision: 0     Path len: 66.677982    Rotation: 0
+08-May-2018 15:35:51: Best Fit: 1673.692088    Distance: 167.368542    Collision: 0    Path len: 66.677982    Rotation: 0
+08-May-2018 15:35:51: Gen: 4: 
+08-May-2018 15:35:51: Initializing networks
+08-May-2018 15:35:51: Initializing remaining params
+08-May-2018 15:35:51: Starting steps

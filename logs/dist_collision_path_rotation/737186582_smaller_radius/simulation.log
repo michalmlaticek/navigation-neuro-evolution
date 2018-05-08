@@ -17031,3 +17031,99 @@
 08-May-2018 14:22:29: Initializing networks
 08-May-2018 14:22:29: Initializing remaining params
 08-May-2018 14:22:29: Starting steps
+08-May-2018 14:23:21: Path 2:
+08-May-2018 14:23:21: Best Fit: 18.565531    Distance: 1.336328    Collision: 0     Path len: 5202.254912    Rotation: 0
+08-May-2018 14:23:21: Best Fit: 947.658581    Distance: 94.256337    Collision: 0    Path len: 5095.216055    Rotation: 0
+08-May-2018 14:23:21: Gen: 2510: 
+08-May-2018 14:23:21: Initializing networks
+08-May-2018 14:23:21: Initializing remaining params
+08-May-2018 14:23:21: Starting steps
+08-May-2018 14:24:28: Path 1:
+08-May-2018 14:24:28: Best Fit: 1664.071842    Distance: 165.843624    Collision: 0     Path len: 5635.604014    Rotation: 0
+08-May-2018 14:24:28: Initializing networks
+08-May-2018 14:24:28: Initializing remaining params
+08-May-2018 14:24:28: Starting steps
+08-May-2018 14:25:23: Path 2:
+08-May-2018 14:25:23: Best Fit: 18.565531    Distance: 1.336328    Collision: 0     Path len: 5202.254912    Rotation: 0
+08-May-2018 14:25:23: Best Fit: 947.658581    Distance: 94.256337    Collision: 0    Path len: 5095.216055    Rotation: 0
+08-May-2018 14:25:23: Gen: 2511: 
+08-May-2018 14:25:23: Initializing networks
+08-May-2018 14:25:23: Initializing remaining params
+08-May-2018 14:25:23: Starting steps
+08-May-2018 14:26:33: Path 1:
+08-May-2018 14:26:33: Best Fit: 1473.160743    Distance: 146.822661    Collision: 0     Path len: 4934.131356    Rotation: 0
+08-May-2018 14:26:33: Initializing networks
+08-May-2018 14:26:33: Initializing remaining params
+08-May-2018 14:26:33: Starting steps
+08-May-2018 14:27:26: Path 2:
+08-May-2018 14:27:26: Best Fit: 18.565531    Distance: 1.336328    Collision: 0     Path len: 5202.254912    Rotation: 0
+08-May-2018 14:27:26: Best Fit: 947.658581    Distance: 94.256337    Collision: 0    Path len: 5095.216055    Rotation: 0
+08-May-2018 14:27:26: Gen: 2512: 
+08-May-2018 14:27:26: Initializing networks
+08-May-2018 14:27:26: Initializing remaining params
+08-May-2018 14:27:26: Starting steps
+08-May-2018 14:28:35: Path 1:
+08-May-2018 14:28:35: Best Fit: 1637.767482    Distance: 163.282430    Collision: 0     Path len: 4943.178197    Rotation: 0
+08-May-2018 14:28:35: Initializing networks
+08-May-2018 14:28:36: Initializing remaining params
+08-May-2018 14:28:36: Starting steps
+08-May-2018 14:29:22: Path 2:
+08-May-2018 14:29:22: Best Fit: 18.565531    Distance: 1.336328    Collision: 0     Path len: 5202.254912    Rotation: 0
+08-May-2018 14:29:22: Best Fit: 947.658581    Distance: 94.256337    Collision: 0    Path len: 5095.216055    Rotation: 0
+08-May-2018 14:29:22: Gen: 2513: 
+08-May-2018 14:29:22: Initializing networks
+08-May-2018 14:29:22: Initializing remaining params
+08-May-2018 14:29:22: Starting steps
+08-May-2018 14:30:26: Path 1:
+08-May-2018 14:30:26: Best Fit: 1685.330860    Distance: 168.057862    Collision: 0     Path len: 4752.239550    Rotation: 0
+08-May-2018 14:30:26: Initializing networks
+08-May-2018 14:30:26: Initializing remaining params
+08-May-2018 14:30:27: Starting steps
+08-May-2018 14:31:24: Path 2:
+08-May-2018 14:31:24: Best Fit: 18.565531    Distance: 1.336328    Collision: 0     Path len: 5202.254912    Rotation: 0
+08-May-2018 14:31:24: Best Fit: 947.658581    Distance: 94.256337    Collision: 0    Path len: 5095.216055    Rotation: 0
+08-May-2018 14:31:24: Gen: 2514: 
+08-May-2018 14:31:24: Initializing networks
+08-May-2018 14:31:24: Initializing remaining params
+08-May-2018 14:31:24: Starting steps
+08-May-2018 14:33:07: Path 1:
+08-May-2018 14:33:07: Best Fit: 1597.861151    Distance: 159.322742    Collision: 0     Path len: 4633.734894    Rotation: 0
+08-May-2018 14:33:07: Initializing networks
+08-May-2018 14:33:07: Initializing remaining params
+08-May-2018 14:33:07: Starting steps
+08-May-2018 14:34:17: Path 2:
+08-May-2018 14:34:17: Best Fit: 18.565531    Distance: 1.336328    Collision: 0     Path len: 5202.254912    Rotation: 0
+08-May-2018 14:34:17: Best Fit: 947.658581    Distance: 94.256337    Collision: 0    Path len: 5095.216055    Rotation: 0
+08-May-2018 14:34:17: Gen: 2515: 
+08-May-2018 14:34:17: Initializing networks
+08-May-2018 14:34:17: Initializing remaining params
+08-May-2018 14:34:17: Starting steps
+08-May-2018 14:35:49: Path 1:
+08-May-2018 14:35:49: Best Fit: 1618.717476    Distance: 161.532411    Collision: 0     Path len: 3393.365200    Rotation: 0
+08-May-2018 14:35:49: Initializing networks
+08-May-2018 14:35:49: Initializing remaining params
+08-May-2018 14:35:49: Starting steps
+08-May-2018 14:36:53: Path 2:
+08-May-2018 14:36:53: Best Fit: 18.565531    Distance: 1.336328    Collision: 0     Path len: 5202.254912    Rotation: 0
+08-May-2018 14:36:53: Best Fit: 947.658581    Distance: 94.256337    Collision: 0    Path len: 5095.216055    Rotation: 0
+08-May-2018 14:36:53: Gen: 2516: 
+08-May-2018 14:36:53: Initializing networks
+08-May-2018 14:36:53: Initializing remaining params
+08-May-2018 14:36:53: Starting steps
+08-May-2018 14:38:12: Path 1:
+08-May-2018 14:38:12: Best Fit: 1685.392524    Distance: 168.126508    Collision: 0     Path len: 4127.441898    Rotation: 0
+08-May-2018 14:38:12: Initializing networks
+08-May-2018 14:38:12: Initializing remaining params
+08-May-2018 14:38:12: Starting steps
+08-May-2018 14:39:12: Path 2:
+08-May-2018 14:39:12: Best Fit: 18.565531    Distance: 1.336328    Collision: 0     Path len: 5202.254912    Rotation: 0
+08-May-2018 14:39:12: Best Fit: 947.658581    Distance: 94.256337    Collision: 0    Path len: 5095.216055    Rotation: 0
+08-May-2018 14:39:12: Gen: 2517: 
+08-May-2018 14:39:12: Initializing networks
+08-May-2018 14:39:12: Initializing remaining params
+08-May-2018 14:39:12: Starting steps
+08-May-2018 14:40:32: Path 1:
+08-May-2018 14:40:32: Best Fit: 1653.579707    Distance: 164.838719    Collision: 0     Path len: 5192.520848    Rotation: 0
+08-May-2018 14:40:32: Initializing networks
+08-May-2018 14:40:32: Initializing remaining params
+08-May-2018 14:40:32: Starting steps
