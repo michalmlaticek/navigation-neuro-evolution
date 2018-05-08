@@ -9,7 +9,7 @@ function settings = a_settings()
     target_positions = [220 30; 25 225];
     settings.initPosition = reshape(init_positions, [1, size(init_positions, 2), 2]);
     settings.targetPosition = reshape(target_positions, [1, size(target_positions, 2), 2]);
-    settings.radius = 10;
+    settings.radius = 5;
     settings.sensorAngles = [-60; -40; -20; 0; 20; 40; 60];
     settings.sensorLen = 40;
     settings.maxSpeed = 15;
@@ -31,5 +31,8 @@ function settings = a_settings()
     settings.M = 1;
     settings.space=[-settings.M*ones(1,settings.genom_len); settings.M*ones(1,settings.genom_len)];  % working space
     settings.sigma=settings.space(2,:)/50; %mutation working space
+    settings.move_mem_len = 20;
+    settings.move_stuck_treshold = 5;
+    settings.protected_distance = 15;
 end
 

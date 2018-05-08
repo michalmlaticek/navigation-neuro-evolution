@@ -9,7 +9,8 @@ function data = a_fitness_path( ...
     init_angles, ...
     step_count, ...
     cmap, ...
-    max_distance)
+    max_distance, ...
+    settings)
 
     global draw
     global draw_refresh_rate
@@ -35,19 +36,20 @@ function data = a_fitness_path( ...
     norm_target_distances = normalize_distance(target_distances, max_distance);
     
     collisions = zeros(1, pop_size);
-    %combined_angle_errs = zeros(1, pop_size);
-    path_lens = zeros(1, pop_size);
-    rotations = zeros(1, pop_size);
+    cum_angle_errs = zeros(1, pop_size);
+    %path_lens = zeros(1, pop_size);
+    %rotations = zeros(1, pop_size);
+    move_mem = zeros(settings.move_mem_len, pop_size, 2) + 1000;
 
     if draw
-       [im, map2draw] = draw_map(map, cmap, robot_bodies, sensor_lines, start_positions, target_positions, true);
+       draw_map(map, cmap, robot_bodies, sensor_lines, start_positions, target_positions)
        pause(draw_refresh_rate);
     end
 
     logger.debug('Starting steps');
     for step = 1:step_count
        net_inputs = create_inputs(sensor_lines, robot.sensorLen, ...
-           norm_angle_errors, norm_target_distances, map);
+           norm_angle_errors, norm_target_distances, move_mem, settings, map, target_distances);
        net_outputs = eval_nets_tanh(nets, net_inputs);
 
        [d_angles, d_speeds] = extract_outputs(net_outputs, robot.maxSpeed);
@@ -59,7 +61,7 @@ function data = a_fitness_path( ...
        collis = get_collisions(map, robot_bodies, robot_positions, dxys, d_speeds, robot.radius);
 
        if draw
-            [im, map2draw] = draw_map(map, cmap, robot_bodies, sensor_lines, start_positions, target_positions, collis, true);
+            draw_map(map, cmap, robot_bodies, sensor_lines, start_positions, target_positions, collis)
             pause(draw_refresh_rate);
        end
 
@@ -70,21 +72,32 @@ function data = a_fitness_path( ...
 
        % tracking for fitness
        collisions = collisions + collis;
-       path_lens = path_lens + d_speeds;
+       % path_lens = path_lens + d_speeds;
        
-       lt05 = target_distances < 0.5;
-       rotations(lt05) = rotations(lt05) + abs(d_angles(lt05));
+       % if no sensor readings (or far) add to cummulative angle err
+       sensor_readings = net_inputs(1:length(robot.sensorAngles), :);
+       % the further away, the smaller the reading
+       no_reading_idx = sensor_readings > 0.1; % 1 for all that read something
+       free_way_ahead = sum(no_reading_idx, 1);
+       free_way_ahead_idx = free_way_ahead == 0;
+       cum_angle_errs(free_way_ahead_idx) = ...
+           cum_angle_errs(free_way_ahead_idx) + angle_errors(free_way_ahead_idx);
        
+       %lt05 = target_distances < 0.5;
+       %rotations(lt05) = rotations(lt05) + abs(d_angles(lt05));
+       
+       move_mem = [move_mem(2:settings.move_mem_len, :,:); dxys(1, :, :)];
        
     end % for step
     
     data = {};
     %%%% Fitness %%%%%%%
-    data.fits = 10*target_distances + 100*collisions + 0.001*path_lens + 0.001*rotations;
+    data.fits = 10*target_distances + 100*collisions + 0.1*cum_angle_errs;
     data.distances = target_distances;
     data.collisions = collisions;
-    data.path_lens = path_lens;
-    data.rotations = rotations;   
+    %data.path_lens = path_lens;
+    data.cum_angle_errs = cum_angle_errs;
+    %data.rotations = rotations;   
 end
 
 function colision_indicators = get_collisions(map, ...
@@ -109,11 +122,17 @@ function colision_indicators = get_collisions(map, ...
     end
 end
 
-function ins = create_inputs(sensor_lines, sensor_len, angle_errors, target_distances, map)
+function ins = create_inputs(sensor_lines, sensor_len, angle_errors, target_distances, move_mem, settings, map, real_target_dist)
     readings = read_sensors(sensor_lines, sensor_len, map);
     normalized_readings = normalize_sensor_readings(readings, sensor_len);
     
-    ins = [normalized_readings; angle_errors; target_distances];
+    move_mem_sum = sum(move_mem, 1);
+    not_stuck_xy_idx = move_mem_sum(1, :, :) > settings.move_stuck_treshold;
+    in_target_zone_idx = real_target_dist < settings.protected_distance;
+    not_stuck_xy_idx(1, :, 3) = in_target_zone_idx;
+    stuck_idx = sum(not_stuck_xy_idx, 3) == 0;
+    
+    ins = [normalized_readings; angle_errors; target_distances; stuck_idx];
 end
 
 function [d_angles, d_speeds] = extract_outputs(outs, max_speed)
