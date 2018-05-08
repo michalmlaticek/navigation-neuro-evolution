@@ -1,5 +1,5 @@
-/logs
 /archived_logs
 archived_logs.zip
 logs.zip
 *.asv
+*.mat

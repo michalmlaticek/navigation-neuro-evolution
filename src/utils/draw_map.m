@@ -1,8 +1,8 @@
-function draw_map(map, cmap, bodies, sensor_lines, start, target, ...
-    collis_idx)
+function [im, map2draw] = draw_map(map, cmap, bodies, sensor_lines, start, target, ...
+    collis_idx, gif, gif_name)
     map2draw = map;
     for r = 1:size(bodies, 2) % for each robot
-        if exist('collis_idx', 'var') && collis_idx(r) > 0
+        if exist('collis_idx', 'var') && ~isempty(collis_idx) && collis_idx(r) > 0
             map2draw = draw_body(map2draw, bodies(:, r, :), 4);
         else
             map2draw = draw_body(map2draw, bodies(:, r, :), r + 4);
@@ -12,9 +12,25 @@ function draw_map(map, cmap, bodies, sensor_lines, start, target, ...
     
     map2draw(start(1), start(2)) = 2;
     map2draw(target(1), target(2)) = 3;
-    image(map2draw, 'CDataMapping', 'direct');
+    im = image(map2draw, 'CDataMapping', 'direct');
     colormap(cmap);
     axis image
+    
+    if exist('gif','var') && ~isempty(gif)
+       if exist('gif_name', 'var') && ~isempty(gif_name)
+           if exist(gif_name, 'file') == 2
+               imwrite(map2draw,cmap,sprintf('%s.gif', gif_name),'gif','DelayTime',0.1, 'WriteMode','append'); 
+           else
+               imwrite(map2draw,cmap,sprintf('%s.gif', gif_name),'gif', 'DelayTime',0.1,  'Loopcount',inf);
+           end
+       else
+           if exist('simulation.gif', 'file') == 2
+               imwrite(map2draw,cmap,'simulation.gif','gif','DelayTime',0.1, 'WriteMode','append'); 
+           else
+               imwrite(map2draw,cmap,'simulation.gif','gif', 'DelayTime',0.1,  'Loopcount',inf);
+           end
+       end
+    end
 end
 
 function map = draw_body(map, body, c_idx)

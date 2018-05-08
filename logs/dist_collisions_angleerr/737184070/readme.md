@@ -1,0 +1,40 @@
+First run seems promissing, there were 1248 generations created. Than the experiment was stopped because population was not being saved and a continuation was triggered. That however 
+changed the population size generation from 150 to 100. So from gen 1249 till 2026 the population was 100.
+
+Fitness: 
+
+Activation:
+
+function settings = a_settings()
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Experriment Settings
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    settings = {};
+    settings.netLayout = [9 3 2];
+    settings.genom_len = calculateWBCount(settings.netLayout);
+    settings.initPosition = reshape([40;40], [1, 1, 2]);
+    settings.targetPosition = reshape([210; 210], [1, 1, 2]);
+    settings.radius = 10;
+    settings.sensorAngles = [-60; -40; -20; 0; 20; 40; 60];
+    settings.sensorLen = 40;
+    settings.maxSpeed = 10;
+    settings.initAngle = 0;
+    settings.duration = 1; %duration between scans
+
+    settings.gen_count = 2500;
+    settings.pop_count = 150;
+    settings.step_count = 1000; % number of steps the agent is executing
+
+    settings.cmap = create_cmap(settings.pop_count);
+    %settings.map = MapFactory.basic_map(250, 250, 20, 50, 3);
+    settings.map = MapFactory.from_img('../../../maps/map_4_path_2.png');
+    settings.max_distance = sqrt(size(settings.map, 1)^2 + size(settings.map, 2)^2);
+    settings.robot = Robot(settings.radius, settings.sensorAngles, ...
+        settings.sensorLen, settings.maxSpeed, []);
+    body = get_body(settings.radius)';
+    settings.body = reshape(body, [length(body), 1, 2]);
+    settings.M = 1;
+    settings.space=[-settings.M*ones(1,settings.genom_len); settings.M*ones(1,settings.genom_len)];  % working space
+    settings.sigma=settings.space(2,:)/50; %mutation working space
+end
+
