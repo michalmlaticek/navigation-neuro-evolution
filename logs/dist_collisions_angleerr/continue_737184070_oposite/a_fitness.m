@@ -37,7 +37,7 @@ function data = a_fitness( ...
     combined_angle_errs = zeros(1, pop_size);
 
     if draw
-       draw_map(map, cmap, robot_bodies, sensor_lines, start_positions, target_positions)
+       draw_map(map, cmap, robot_bodies, sensor_lines, start_positions, target_positions, [], true);
        pause(draw_refresh_rate);
     end
 
@@ -53,8 +53,10 @@ function data = a_fitness( ...
        [robot_positions, robot_bodies] = translate(robot_positions, body, robot_angles, d_speeds);
        sensor_lines = get_sensor_lines(sensor_angles, robot_positions, robot);
 
+        [collis, targets] = get_collisions_and_targets(map, robot_bodies, robot_positions, target_positions);
+       
        if draw
-            draw_map(map, cmap, robot_bodies, sensor_lines, start_positions, target_positions)
+            draw_map(map, cmap, robot_bodies, sensor_lines, start_positions, target_positions, collis, true);
             pause(draw_refresh_rate);
        end
 
@@ -62,8 +64,6 @@ function data = a_fitness( ...
        norm_angle_errors = normalize_angles(angle_errors);
        target_distances = euc_dist_3d(robot_positions, target_positions);
        norm_target_distances = normalize_distance(target_distances, max_distance);
-
-       [collis, targets] = get_collisions_and_targets(map, robot_bodies, robot_positions, target_positions);
 
        % tracking for fitness
        collisions = collisions + collis;

@@ -1,9 +1,11 @@
 First run seems promissing, there were 1248 generations created. Than the experiment was stopped because population was not being saved and a continuation was triggered. That however 
 changed the population size generation from 150 to 100. So from gen 1249 till 2026 the population was 100.
 
-Fitness: 
+Good results for the original path. When new target point was given, the agent either ignored the obstacle, or got stuck
 
-Activation:
+Fitness:  10*distances + 10*collisions + 0.001*combined_angle_errs;
+
+Activation: clamped
 
 function settings = a_settings()
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%

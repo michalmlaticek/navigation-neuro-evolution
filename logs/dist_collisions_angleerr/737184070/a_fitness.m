@@ -37,7 +37,7 @@ function data = a_fitness( ...
     combined_angle_errs = zeros(1, pop_size);
 
     if draw
-       draw_map(map, cmap, robot_bodies, sensor_lines, start_positions, target_positions, [], true)
+       draw_map(map, cmap, robot_bodies, sensor_lines, start_positions, target_positions, [], true);
        pause(draw_refresh_rate);
     end
 
@@ -45,7 +45,7 @@ function data = a_fitness( ...
     for step = 1:step_count
        net_inputs = create_inputs(sensor_lines, robot.sensorLen, ...
            norm_angle_errors, norm_target_distances, map);
-       net_outputs = eval_nets(nets, net_inputs);
+       net_outputs = eval_nets_tanh(nets, net_inputs);
 
        [d_angles, d_speeds] = extract_outputs(net_outputs, robot.maxSpeed);
 
@@ -56,7 +56,7 @@ function data = a_fitness( ...
        [collis, targets] = get_collisions_and_targets(map, robot_bodies, robot_positions, target_positions);
        
        if draw
-            draw_map(map, cmap, robot_bodies, sensor_lines, start_positions, target_positions, collis, true)
+            draw_map(map, cmap, robot_bodies, sensor_lines, start_positions, target_positions, collis, true);
             pause(draw_refresh_rate);
        end
 
