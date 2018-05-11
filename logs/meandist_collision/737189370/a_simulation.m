@@ -12,13 +12,13 @@ function a_simulation(gen_id, relative_fits, init_position, target_position, ...
     global draw;
     draw = true;
     global draw_refresh_rate;
-    draw_refresh_rate = 0.1;
+    draw_refresh_rate = 0.01;
 
 
     %load population
     data = load(sprintf('out-data-gen-%d.mat', gen_id));
     Pop = data.data.Pop;
-    Fit = data.data.Fit;
+    Fit = data.data.fits;
     
     % create a unique population
     Pop = [Fit' Pop];
