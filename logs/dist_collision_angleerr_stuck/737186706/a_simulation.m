@@ -1,4 +1,5 @@
-function a_simulation(gen_id, relative_fits, init_position, target_position)
+function a_simulation(gen_id, relative_fits, init_position, target_position, ...
+    step_count)
     cd_here();
     add_paths();
 
@@ -37,12 +38,16 @@ function a_simulation(gen_id, relative_fits, init_position, target_position)
         settings.targetPosition = reshape(target_position, [1, 1, 2]); 
     end
     
+    if exist('step_count', 'var') && ~isempty(step_count)
+       settings.step_count = step_count;
+    end
+    
     figure;
 
     a_fitness(Pop, settings.map, settings.netLayout, ...
             settings.robot, settings.body, settings.initPosition, ...
             settings.targetPosition, settings.initAngle, settings.step_count, ...
-            settings.cmap, settings.max_distance);
+            settings.cmap, settings.max_distance, settings);
     
 end
 
