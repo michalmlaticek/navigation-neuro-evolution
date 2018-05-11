@@ -3,7 +3,7 @@ function settings = a_settings()
     % Experriment Settings
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%
     settings = {};
-    settings.netLayout = [9 3 2];
+    settings.netLayout = [10 6 2];
     settings.genom_len = calculateWBCount(settings.netLayout);
     init_positions = [23 23; 220 30];
     target_positions = [220 30; 25 225];
