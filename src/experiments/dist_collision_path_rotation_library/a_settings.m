@@ -5,8 +5,8 @@ function settings = a_settings()
     settings = {};
     settings.netLayout = [9 3 2];
     settings.genom_len = calculateWBCount(settings.netLayout);
-    init_positions = [40 40];
-    target_positions = [430 275];
+    init_positions = [20 20];
+    target_positions = [215 135];
     settings.initPosition = reshape(init_positions, [1, size(init_positions, 1), 2]);
     settings.targetPosition = reshape(target_positions, [1, size(target_positions, 1), 2]);
     settings.radius = 5;
@@ -16,9 +16,9 @@ function settings = a_settings()
     settings.initAngle = 0;
     settings.duration = 1; %duration between scans
 
-    settings.gen_count = 2000;
+    settings.gen_count = 1500;
     settings.pop_count = 200;
-    settings.step_count = 2000; % number of steps the agent is executing
+    settings.step_count = 1500; % number of steps the agent is executing
 
     settings.cmap = create_cmap(settings.pop_count);
     %settings.map = MapFactory.basic_map(250, 250, 20, 50, 3);

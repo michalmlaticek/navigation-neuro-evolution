@@ -1,0 +1,671 @@
+11-May-2018 06:12:41: Coppining src files to log folder
+11-May-2018 06:12:41: Loading settings
+11-May-2018 06:12:42: Gen: 1: 
+11-May-2018 06:12:42: Initializing networks
+11-May-2018 06:12:42: Initializing remaining params
+11-May-2018 06:12:42: Starting steps
+11-May-2018 06:13:02: Best Fit: 185.000000    Distance: 185.000000    Collision: 0
+11-May-2018 06:13:02: Gen: 2: 
+11-May-2018 06:13:02: Initializing networks
+11-May-2018 06:13:02: Initializing remaining params
+11-May-2018 06:13:02: Starting steps
+11-May-2018 06:13:26: Best Fit: 181.348552    Distance: 181.348552    Collision: 0
+11-May-2018 06:13:26: Gen: 3: 
+11-May-2018 06:13:26: Initializing networks
+11-May-2018 06:13:26: Initializing remaining params
+11-May-2018 06:13:26: Starting steps
+11-May-2018 06:13:50: Best Fit: 181.348552    Distance: 181.348552    Collision: 0
+11-May-2018 06:13:50: Gen: 4: 
+11-May-2018 06:13:50: Initializing networks
+11-May-2018 06:13:50: Initializing remaining params
+11-May-2018 06:13:50: Starting steps
+11-May-2018 06:14:18: Best Fit: 174.726514    Distance: 174.726514    Collision: 0
+11-May-2018 06:14:18: Gen: 5: 
+11-May-2018 06:14:18: Initializing networks
+11-May-2018 06:14:18: Initializing remaining params
+11-May-2018 06:14:18: Starting steps
+11-May-2018 06:14:47: Best Fit: 174.630099    Distance: 174.630099    Collision: 0
+11-May-2018 06:14:47: Gen: 6: 
+11-May-2018 06:14:47: Initializing networks
+11-May-2018 06:14:47: Initializing remaining params
+11-May-2018 06:14:47: Starting steps
+11-May-2018 06:15:14: Best Fit: 174.630099    Distance: 174.630099    Collision: 0
+11-May-2018 06:15:14: Gen: 7: 
+11-May-2018 06:15:14: Initializing networks
+11-May-2018 06:15:14: Initializing remaining params
+11-May-2018 06:15:14: Starting steps
+11-May-2018 06:15:42: Best Fit: 170.240761    Distance: 170.240761    Collision: 0
+11-May-2018 06:15:42: Gen: 8: 
+11-May-2018 06:15:42: Initializing networks
+11-May-2018 06:15:42: Initializing remaining params
+11-May-2018 06:15:42: Starting steps
+11-May-2018 06:16:21: Best Fit: 170.240761    Distance: 170.240761    Collision: 0
+11-May-2018 06:16:21: Gen: 9: 
+11-May-2018 06:16:21: Initializing networks
+11-May-2018 06:16:21: Initializing remaining params
+11-May-2018 06:16:21: Starting steps
+11-May-2018 06:17:00: Best Fit: 139.744304    Distance: 139.744304    Collision: 0
+11-May-2018 06:17:00: Gen: 10: 
+11-May-2018 06:17:00: Initializing networks
+11-May-2018 06:17:00: Initializing remaining params
+11-May-2018 06:17:00: Starting steps
+11-May-2018 06:17:38: Best Fit: 122.708677    Distance: 122.708677    Collision: 0
+11-May-2018 06:17:38: Gen: 11: 
+11-May-2018 06:17:38: Initializing networks
+11-May-2018 06:17:38: Initializing remaining params
+11-May-2018 06:17:38: Starting steps
+11-May-2018 06:18:04: Best Fit: 122.708677    Distance: 122.708677    Collision: 0
+11-May-2018 06:18:05: Gen: 12: 
+11-May-2018 06:18:05: Initializing networks
+11-May-2018 06:18:05: Initializing remaining params
+11-May-2018 06:18:05: Starting steps
+11-May-2018 06:18:38: Best Fit: 122.708677    Distance: 122.708677    Collision: 0
+11-May-2018 06:18:38: Gen: 13: 
+11-May-2018 06:18:38: Initializing networks
+11-May-2018 06:18:38: Initializing remaining params
+11-May-2018 06:18:38: Starting steps
+11-May-2018 06:19:06: Best Fit: 121.484833    Distance: 121.484833    Collision: 0
+11-May-2018 06:19:06: Gen: 14: 
+11-May-2018 06:19:06: Initializing networks
+11-May-2018 06:19:06: Initializing remaining params
+11-May-2018 06:19:06: Starting steps
+11-May-2018 06:19:36: Best Fit: 119.183791    Distance: 119.183791    Collision: 0
+11-May-2018 06:19:36: Gen: 15: 
+11-May-2018 06:19:36: Initializing networks
+11-May-2018 06:19:36: Initializing remaining params
+11-May-2018 06:19:36: Starting steps
+11-May-2018 06:20:06: Best Fit: 119.100397    Distance: 119.100397    Collision: 0
+11-May-2018 06:20:06: Gen: 16: 
+11-May-2018 06:20:06: Initializing networks
+11-May-2018 06:20:06: Initializing remaining params
+11-May-2018 06:20:06: Starting steps
+11-May-2018 06:20:37: Best Fit: 119.100397    Distance: 119.100397    Collision: 0
+11-May-2018 06:20:37: Gen: 17: 
+11-May-2018 06:20:37: Initializing networks
+11-May-2018 06:20:37: Initializing remaining params
+11-May-2018 06:20:37: Starting steps
+11-May-2018 06:21:11: Best Fit: 119.100397    Distance: 119.100397    Collision: 0
+11-May-2018 06:21:11: Gen: 18: 
+11-May-2018 06:21:11: Initializing networks
+11-May-2018 06:21:11: Initializing remaining params
+11-May-2018 06:21:11: Starting steps
+11-May-2018 06:21:44: Best Fit: 119.100397    Distance: 119.100397    Collision: 0
+11-May-2018 06:21:44: Gen: 19: 
+11-May-2018 06:21:44: Initializing networks
+11-May-2018 06:21:44: Initializing remaining params
+11-May-2018 06:21:44: Starting steps
+11-May-2018 06:22:15: Best Fit: 119.086786    Distance: 119.086786    Collision: 0
+11-May-2018 06:22:15: Gen: 20: 
+11-May-2018 06:22:15: Initializing networks
+11-May-2018 06:22:15: Initializing remaining params
+11-May-2018 06:22:15: Starting steps
+11-May-2018 06:22:40: Best Fit: 119.086786    Distance: 119.086786    Collision: 0
+11-May-2018 06:22:40: Gen: 21: 
+11-May-2018 06:22:40: Initializing networks
+11-May-2018 06:22:40: Initializing remaining params
+11-May-2018 06:22:40: Starting steps
+11-May-2018 06:23:06: Best Fit: 118.672888    Distance: 118.672888    Collision: 0
+11-May-2018 06:23:06: Gen: 22: 
+11-May-2018 06:23:06: Initializing networks
+11-May-2018 06:23:06: Initializing remaining params
+11-May-2018 06:23:06: Starting steps
+11-May-2018 06:23:33: Best Fit: 118.637966    Distance: 118.637966    Collision: 0
+11-May-2018 06:23:33: Gen: 23: 
+11-May-2018 06:23:33: Initializing networks
+11-May-2018 06:23:33: Initializing remaining params
+11-May-2018 06:23:33: Starting steps
+11-May-2018 06:23:58: Best Fit: 118.587413    Distance: 118.587413    Collision: 0
+11-May-2018 06:23:58: Gen: 24: 
+11-May-2018 06:23:58: Initializing networks
+11-May-2018 06:23:58: Initializing remaining params
+11-May-2018 06:23:58: Starting steps
+11-May-2018 06:24:25: Best Fit: 117.874210    Distance: 117.874210    Collision: 0
+11-May-2018 06:24:25: Gen: 25: 
+11-May-2018 06:24:25: Initializing networks
+11-May-2018 06:24:25: Initializing remaining params
+11-May-2018 06:24:25: Starting steps
+11-May-2018 06:24:52: Best Fit: 117.874210    Distance: 117.874210    Collision: 0
+11-May-2018 06:24:52: Gen: 26: 
+11-May-2018 06:24:52: Initializing networks
+11-May-2018 06:24:52: Initializing remaining params
+11-May-2018 06:24:52: Starting steps
+11-May-2018 06:25:18: Best Fit: 117.678660    Distance: 117.678660    Collision: 0
+11-May-2018 06:25:18: Gen: 27: 
+11-May-2018 06:25:18: Initializing networks
+11-May-2018 06:25:18: Initializing remaining params
+11-May-2018 06:25:18: Starting steps
+11-May-2018 06:25:44: Best Fit: 117.608860    Distance: 117.608860    Collision: 0
+11-May-2018 06:25:44: Gen: 28: 
+11-May-2018 06:25:44: Initializing networks
+11-May-2018 06:25:44: Initializing remaining params
+11-May-2018 06:25:44: Starting steps
+11-May-2018 06:26:11: Best Fit: 117.133282    Distance: 117.133282    Collision: 0
+11-May-2018 06:26:11: Gen: 29: 
+11-May-2018 06:26:11: Initializing networks
+11-May-2018 06:26:11: Initializing remaining params
+11-May-2018 06:26:11: Starting steps
+11-May-2018 06:26:37: Best Fit: 113.591547    Distance: 113.591547    Collision: 0
+11-May-2018 06:26:37: Gen: 30: 
+11-May-2018 06:26:37: Initializing networks
+11-May-2018 06:26:37: Initializing remaining params
+11-May-2018 06:26:37: Starting steps
+11-May-2018 06:27:04: Best Fit: 107.562571    Distance: 107.562571    Collision: 0
+11-May-2018 06:27:04: Gen: 31: 
+11-May-2018 06:27:04: Initializing networks
+11-May-2018 06:27:04: Initializing remaining params
+11-May-2018 06:27:04: Starting steps
+11-May-2018 06:27:32: Best Fit: 102.964353    Distance: 102.964353    Collision: 0
+11-May-2018 06:27:32: Gen: 32: 
+11-May-2018 06:27:32: Initializing networks
+11-May-2018 06:27:32: Initializing remaining params
+11-May-2018 06:27:32: Starting steps
+11-May-2018 06:27:59: Best Fit: 96.819076    Distance: 96.819076    Collision: 0
+11-May-2018 06:27:59: Gen: 33: 
+11-May-2018 06:27:59: Initializing networks
+11-May-2018 06:27:59: Initializing remaining params
+11-May-2018 06:27:59: Starting steps
+11-May-2018 06:28:26: Best Fit: 96.819076    Distance: 96.819076    Collision: 0
+11-May-2018 06:28:26: Gen: 34: 
+11-May-2018 06:28:26: Initializing networks
+11-May-2018 06:28:26: Initializing remaining params
+11-May-2018 06:28:26: Starting steps
+11-May-2018 06:28:54: Best Fit: 72.900666    Distance: 72.900666    Collision: 0
+11-May-2018 06:28:54: Gen: 35: 
+11-May-2018 06:28:54: Initializing networks
+11-May-2018 06:28:54: Initializing remaining params
+11-May-2018 06:28:54: Starting steps
+11-May-2018 06:29:20: Best Fit: 72.900666    Distance: 72.900666    Collision: 0
+11-May-2018 06:29:20: Gen: 36: 
+11-May-2018 06:29:20: Initializing networks
+11-May-2018 06:29:20: Initializing remaining params
+11-May-2018 06:29:20: Starting steps
+11-May-2018 06:29:45: Best Fit: 71.127770    Distance: 71.127770    Collision: 0
+11-May-2018 06:29:45: Gen: 37: 
+11-May-2018 06:29:45: Initializing networks
+11-May-2018 06:29:45: Initializing remaining params
+11-May-2018 06:29:45: Starting steps
+11-May-2018 06:30:11: Best Fit: 71.127770    Distance: 71.127770    Collision: 0
+11-May-2018 06:30:11: Gen: 38: 
+11-May-2018 06:30:11: Initializing networks
+11-May-2018 06:30:11: Initializing remaining params
+11-May-2018 06:30:11: Starting steps
+11-May-2018 06:30:38: Best Fit: 71.081099    Distance: 71.081099    Collision: 0
+11-May-2018 06:30:38: Gen: 39: 
+11-May-2018 06:30:38: Initializing networks
+11-May-2018 06:30:38: Initializing remaining params
+11-May-2018 06:30:38: Starting steps
+11-May-2018 06:31:04: Best Fit: 71.081099    Distance: 71.081099    Collision: 0
+11-May-2018 06:31:04: Gen: 40: 
+11-May-2018 06:31:04: Initializing networks
+11-May-2018 06:31:04: Initializing remaining params
+11-May-2018 06:31:04: Starting steps
+11-May-2018 06:31:30: Best Fit: 69.901692    Distance: 69.901692    Collision: 0
+11-May-2018 06:31:30: Gen: 41: 
+11-May-2018 06:31:30: Initializing networks
+11-May-2018 06:31:30: Initializing remaining params
+11-May-2018 06:31:30: Starting steps
+11-May-2018 06:31:57: Best Fit: 69.836632    Distance: 69.836632    Collision: 0
+11-May-2018 06:31:57: Gen: 42: 
+11-May-2018 06:31:57: Initializing networks
+11-May-2018 06:31:57: Initializing remaining params
+11-May-2018 06:31:57: Starting steps
+11-May-2018 06:32:23: Best Fit: 67.713359    Distance: 67.713359    Collision: 0
+11-May-2018 06:32:23: Gen: 43: 
+11-May-2018 06:32:23: Initializing networks
+11-May-2018 06:32:23: Initializing remaining params
+11-May-2018 06:32:23: Starting steps
+11-May-2018 06:32:48: Best Fit: 67.713359    Distance: 67.713359    Collision: 0
+11-May-2018 06:32:48: Gen: 44: 
+11-May-2018 06:32:48: Initializing networks
+11-May-2018 06:32:48: Initializing remaining params
+11-May-2018 06:32:48: Starting steps
+11-May-2018 06:33:13: Best Fit: 67.713359    Distance: 67.713359    Collision: 0
+11-May-2018 06:33:13: Gen: 45: 
+11-May-2018 06:33:13: Initializing networks
+11-May-2018 06:33:13: Initializing remaining params
+11-May-2018 06:33:13: Starting steps
+11-May-2018 06:33:39: Best Fit: 67.713359    Distance: 67.713359    Collision: 0
+11-May-2018 06:33:39: Gen: 46: 
+11-May-2018 06:33:39: Initializing networks
+11-May-2018 06:33:39: Initializing remaining params
+11-May-2018 06:33:39: Starting steps
+11-May-2018 06:34:05: Best Fit: 58.841490    Distance: 58.841490    Collision: 0
+11-May-2018 06:34:05: Gen: 47: 
+11-May-2018 06:34:05: Initializing networks
+11-May-2018 06:34:05: Initializing remaining params
+11-May-2018 06:34:05: Starting steps
+11-May-2018 06:34:32: Best Fit: 58.841490    Distance: 58.841490    Collision: 0
+11-May-2018 06:34:32: Gen: 48: 
+11-May-2018 06:34:32: Initializing networks
+11-May-2018 06:34:32: Initializing remaining params
+11-May-2018 06:34:33: Starting steps
+11-May-2018 06:34:59: Best Fit: 58.841490    Distance: 58.841490    Collision: 0
+11-May-2018 06:34:59: Gen: 49: 
+11-May-2018 06:34:59: Initializing networks
+11-May-2018 06:34:59: Initializing remaining params
+11-May-2018 06:34:59: Starting steps
+11-May-2018 06:35:25: Best Fit: 58.841490    Distance: 58.841490    Collision: 0
+11-May-2018 06:35:25: Gen: 50: 
+11-May-2018 06:35:25: Initializing networks
+11-May-2018 06:35:25: Initializing remaining params
+11-May-2018 06:35:26: Starting steps
+11-May-2018 06:35:52: Best Fit: 56.657906    Distance: 56.657906    Collision: 0
+11-May-2018 06:35:52: Gen: 51: 
+11-May-2018 06:35:52: Initializing networks
+11-May-2018 06:35:52: Initializing remaining params
+11-May-2018 06:35:52: Starting steps
+11-May-2018 06:36:18: Best Fit: 56.657906    Distance: 56.657906    Collision: 0
+11-May-2018 06:36:18: Gen: 52: 
+11-May-2018 06:36:18: Initializing networks
+11-May-2018 06:36:18: Initializing remaining params
+11-May-2018 06:36:18: Starting steps
+11-May-2018 06:36:45: Best Fit: 56.657906    Distance: 56.657906    Collision: 0
+11-May-2018 06:36:45: Gen: 53: 
+11-May-2018 06:36:45: Initializing networks
+11-May-2018 06:36:45: Initializing remaining params
+11-May-2018 06:36:45: Starting steps
+11-May-2018 06:37:12: Best Fit: 56.657906    Distance: 56.657906    Collision: 0
+11-May-2018 06:37:12: Gen: 54: 
+11-May-2018 06:37:12: Initializing networks
+11-May-2018 06:37:12: Initializing remaining params
+11-May-2018 06:37:12: Starting steps
+11-May-2018 06:37:38: Best Fit: 56.657906    Distance: 56.657906    Collision: 0
+11-May-2018 06:37:38: Gen: 55: 
+11-May-2018 06:37:38: Initializing networks
+11-May-2018 06:37:38: Initializing remaining params
+11-May-2018 06:37:38: Starting steps
+11-May-2018 06:38:04: Best Fit: 51.345998    Distance: 51.345998    Collision: 0
+11-May-2018 06:38:04: Gen: 56: 
+11-May-2018 06:38:04: Initializing networks
+11-May-2018 06:38:04: Initializing remaining params
+11-May-2018 06:38:04: Starting steps
+11-May-2018 06:38:31: Best Fit: 51.345998    Distance: 51.345998    Collision: 0
+11-May-2018 06:38:31: Gen: 57: 
+11-May-2018 06:38:31: Initializing networks
+11-May-2018 06:38:31: Initializing remaining params
+11-May-2018 06:38:31: Starting steps
+11-May-2018 06:38:57: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:38:57: Gen: 58: 
+11-May-2018 06:38:57: Initializing networks
+11-May-2018 06:38:57: Initializing remaining params
+11-May-2018 06:38:57: Starting steps
+11-May-2018 06:39:24: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:39:24: Gen: 59: 
+11-May-2018 06:39:24: Initializing networks
+11-May-2018 06:39:24: Initializing remaining params
+11-May-2018 06:39:24: Starting steps
+11-May-2018 06:39:51: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:39:51: Gen: 60: 
+11-May-2018 06:39:51: Initializing networks
+11-May-2018 06:39:51: Initializing remaining params
+11-May-2018 06:39:51: Starting steps
+11-May-2018 06:40:18: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:40:18: Gen: 61: 
+11-May-2018 06:40:18: Initializing networks
+11-May-2018 06:40:18: Initializing remaining params
+11-May-2018 06:40:19: Starting steps
+11-May-2018 06:40:44: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:40:44: Gen: 62: 
+11-May-2018 06:40:44: Initializing networks
+11-May-2018 06:40:44: Initializing remaining params
+11-May-2018 06:40:44: Starting steps
+11-May-2018 06:41:09: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:41:09: Gen: 63: 
+11-May-2018 06:41:09: Initializing networks
+11-May-2018 06:41:09: Initializing remaining params
+11-May-2018 06:41:09: Starting steps
+11-May-2018 06:41:35: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:41:35: Gen: 64: 
+11-May-2018 06:41:35: Initializing networks
+11-May-2018 06:41:35: Initializing remaining params
+11-May-2018 06:41:35: Starting steps
+11-May-2018 06:42:00: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:42:00: Gen: 65: 
+11-May-2018 06:42:00: Initializing networks
+11-May-2018 06:42:00: Initializing remaining params
+11-May-2018 06:42:00: Starting steps
+11-May-2018 06:42:26: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:42:26: Gen: 66: 
+11-May-2018 06:42:26: Initializing networks
+11-May-2018 06:42:26: Initializing remaining params
+11-May-2018 06:42:26: Starting steps
+11-May-2018 06:42:52: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:42:52: Gen: 67: 
+11-May-2018 06:42:52: Initializing networks
+11-May-2018 06:42:52: Initializing remaining params
+11-May-2018 06:42:52: Starting steps
+11-May-2018 06:43:18: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:43:18: Gen: 68: 
+11-May-2018 06:43:18: Initializing networks
+11-May-2018 06:43:18: Initializing remaining params
+11-May-2018 06:43:18: Starting steps
+11-May-2018 06:43:44: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:43:44: Gen: 69: 
+11-May-2018 06:43:44: Initializing networks
+11-May-2018 06:43:44: Initializing remaining params
+11-May-2018 06:43:44: Starting steps
+11-May-2018 06:44:10: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:44:10: Gen: 70: 
+11-May-2018 06:44:10: Initializing networks
+11-May-2018 06:44:10: Initializing remaining params
+11-May-2018 06:44:10: Starting steps
+11-May-2018 06:44:36: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:44:36: Gen: 71: 
+11-May-2018 06:44:36: Initializing networks
+11-May-2018 06:44:36: Initializing remaining params
+11-May-2018 06:44:36: Starting steps
+11-May-2018 06:45:02: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:45:02: Gen: 72: 
+11-May-2018 06:45:02: Initializing networks
+11-May-2018 06:45:02: Initializing remaining params
+11-May-2018 06:45:02: Starting steps
+11-May-2018 06:45:29: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:45:29: Gen: 73: 
+11-May-2018 06:45:29: Initializing networks
+11-May-2018 06:45:29: Initializing remaining params
+11-May-2018 06:45:29: Starting steps
+11-May-2018 06:45:55: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:45:55: Gen: 74: 
+11-May-2018 06:45:55: Initializing networks
+11-May-2018 06:45:55: Initializing remaining params
+11-May-2018 06:45:55: Starting steps
+11-May-2018 06:46:22: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:46:22: Gen: 75: 
+11-May-2018 06:46:22: Initializing networks
+11-May-2018 06:46:22: Initializing remaining params
+11-May-2018 06:46:22: Starting steps
+11-May-2018 06:46:47: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:46:47: Gen: 76: 
+11-May-2018 06:46:47: Initializing networks
+11-May-2018 06:46:47: Initializing remaining params
+11-May-2018 06:46:47: Starting steps
+11-May-2018 06:47:13: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:47:13: Gen: 77: 
+11-May-2018 06:47:13: Initializing networks
+11-May-2018 06:47:13: Initializing remaining params
+11-May-2018 06:47:13: Starting steps
+11-May-2018 06:47:38: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:47:38: Gen: 78: 
+11-May-2018 06:47:38: Initializing networks
+11-May-2018 06:47:38: Initializing remaining params
+11-May-2018 06:47:38: Starting steps
+11-May-2018 06:48:03: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:48:03: Gen: 79: 
+11-May-2018 06:48:03: Initializing networks
+11-May-2018 06:48:03: Initializing remaining params
+11-May-2018 06:48:03: Starting steps
+11-May-2018 06:48:30: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:48:30: Gen: 80: 
+11-May-2018 06:48:30: Initializing networks
+11-May-2018 06:48:30: Initializing remaining params
+11-May-2018 06:48:30: Starting steps
+11-May-2018 06:48:55: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:48:55: Gen: 81: 
+11-May-2018 06:48:55: Initializing networks
+11-May-2018 06:48:55: Initializing remaining params
+11-May-2018 06:48:55: Starting steps
+11-May-2018 06:49:21: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:49:21: Gen: 82: 
+11-May-2018 06:49:21: Initializing networks
+11-May-2018 06:49:21: Initializing remaining params
+11-May-2018 06:49:21: Starting steps
+11-May-2018 06:49:47: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:49:47: Gen: 83: 
+11-May-2018 06:49:47: Initializing networks
+11-May-2018 06:49:47: Initializing remaining params
+11-May-2018 06:49:47: Starting steps
+11-May-2018 06:50:11: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:50:11: Gen: 84: 
+11-May-2018 06:50:11: Initializing networks
+11-May-2018 06:50:11: Initializing remaining params
+11-May-2018 06:50:11: Starting steps
+11-May-2018 06:50:37: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:50:37: Gen: 85: 
+11-May-2018 06:50:37: Initializing networks
+11-May-2018 06:50:37: Initializing remaining params
+11-May-2018 06:50:37: Starting steps
+11-May-2018 06:51:03: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:51:03: Gen: 86: 
+11-May-2018 06:51:03: Initializing networks
+11-May-2018 06:51:03: Initializing remaining params
+11-May-2018 06:51:03: Starting steps
+11-May-2018 06:51:28: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:51:28: Gen: 87: 
+11-May-2018 06:51:28: Initializing networks
+11-May-2018 06:51:28: Initializing remaining params
+11-May-2018 06:51:28: Starting steps
+11-May-2018 06:51:55: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:51:55: Gen: 88: 
+11-May-2018 06:51:55: Initializing networks
+11-May-2018 06:51:55: Initializing remaining params
+11-May-2018 06:51:55: Starting steps
+11-May-2018 06:52:21: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:52:21: Gen: 89: 
+11-May-2018 06:52:21: Initializing networks
+11-May-2018 06:52:21: Initializing remaining params
+11-May-2018 06:52:21: Starting steps
+11-May-2018 06:52:47: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:52:47: Gen: 90: 
+11-May-2018 06:52:47: Initializing networks
+11-May-2018 06:52:47: Initializing remaining params
+11-May-2018 06:52:47: Starting steps
+11-May-2018 06:53:13: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:53:13: Gen: 91: 
+11-May-2018 06:53:13: Initializing networks
+11-May-2018 06:53:13: Initializing remaining params
+11-May-2018 06:53:13: Starting steps
+11-May-2018 06:53:39: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:53:39: Gen: 92: 
+11-May-2018 06:53:39: Initializing networks
+11-May-2018 06:53:39: Initializing remaining params
+11-May-2018 06:53:39: Starting steps
+11-May-2018 06:54:05: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:54:05: Gen: 93: 
+11-May-2018 06:54:05: Initializing networks
+11-May-2018 06:54:05: Initializing remaining params
+11-May-2018 06:54:05: Starting steps
+11-May-2018 06:54:30: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:54:30: Gen: 94: 
+11-May-2018 06:54:30: Initializing networks
+11-May-2018 06:54:30: Initializing remaining params
+11-May-2018 06:54:30: Starting steps
+11-May-2018 06:54:57: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:54:57: Gen: 95: 
+11-May-2018 06:54:57: Initializing networks
+11-May-2018 06:54:57: Initializing remaining params
+11-May-2018 06:54:58: Starting steps
+11-May-2018 06:55:24: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:55:24: Gen: 96: 
+11-May-2018 06:55:24: Initializing networks
+11-May-2018 06:55:24: Initializing remaining params
+11-May-2018 06:55:24: Starting steps
+11-May-2018 06:55:50: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:55:50: Gen: 97: 
+11-May-2018 06:55:50: Initializing networks
+11-May-2018 06:55:50: Initializing remaining params
+11-May-2018 06:55:50: Starting steps
+11-May-2018 06:56:18: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:56:18: Gen: 98: 
+11-May-2018 06:56:18: Initializing networks
+11-May-2018 06:56:18: Initializing remaining params
+11-May-2018 06:56:18: Starting steps
+11-May-2018 06:56:46: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:56:46: Gen: 99: 
+11-May-2018 06:56:46: Initializing networks
+11-May-2018 06:56:46: Initializing remaining params
+11-May-2018 06:56:46: Starting steps
+11-May-2018 06:57:12: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:57:12: Gen: 100: 
+11-May-2018 06:57:12: Initializing networks
+11-May-2018 06:57:12: Initializing remaining params
+11-May-2018 06:57:12: Starting steps
+11-May-2018 06:57:57: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:57:57: Gen: 101: 
+11-May-2018 06:57:57: Initializing networks
+11-May-2018 06:57:57: Initializing remaining params
+11-May-2018 06:57:57: Starting steps
+11-May-2018 06:58:44: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:58:44: Gen: 102: 
+11-May-2018 06:58:44: Initializing networks
+11-May-2018 06:58:44: Initializing remaining params
+11-May-2018 06:58:44: Starting steps
+11-May-2018 06:59:32: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 06:59:32: Gen: 103: 
+11-May-2018 06:59:32: Initializing networks
+11-May-2018 06:59:32: Initializing remaining params
+11-May-2018 06:59:32: Starting steps
+11-May-2018 07:00:19: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 07:00:19: Gen: 104: 
+11-May-2018 07:00:19: Initializing networks
+11-May-2018 07:00:19: Initializing remaining params
+11-May-2018 07:00:19: Starting steps
+11-May-2018 07:01:06: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 07:01:06: Gen: 105: 
+11-May-2018 07:01:06: Initializing networks
+11-May-2018 07:01:06: Initializing remaining params
+11-May-2018 07:01:06: Starting steps
+11-May-2018 07:01:53: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 07:01:53: Gen: 106: 
+11-May-2018 07:01:53: Initializing networks
+11-May-2018 07:01:53: Initializing remaining params
+11-May-2018 07:01:53: Starting steps
+11-May-2018 07:02:45: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 07:02:45: Gen: 107: 
+11-May-2018 07:02:45: Initializing networks
+11-May-2018 07:02:45: Initializing remaining params
+11-May-2018 07:02:45: Starting steps
+11-May-2018 07:03:59: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 07:03:59: Gen: 108: 
+11-May-2018 07:03:59: Initializing networks
+11-May-2018 07:03:59: Initializing remaining params
+11-May-2018 07:03:59: Starting steps
+11-May-2018 07:05:38: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 07:05:38: Gen: 109: 
+11-May-2018 07:05:38: Initializing networks
+11-May-2018 07:05:38: Initializing remaining params
+11-May-2018 07:05:38: Starting steps
+11-May-2018 07:06:18: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 07:06:18: Gen: 110: 
+11-May-2018 07:06:18: Initializing networks
+11-May-2018 07:06:18: Initializing remaining params
+11-May-2018 07:06:18: Starting steps
+11-May-2018 07:06:49: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 07:06:49: Gen: 111: 
+11-May-2018 07:06:49: Initializing networks
+11-May-2018 07:06:49: Initializing remaining params
+11-May-2018 07:06:49: Starting steps
+11-May-2018 07:07:16: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 07:07:16: Gen: 112: 
+11-May-2018 07:07:16: Initializing networks
+11-May-2018 07:07:16: Initializing remaining params
+11-May-2018 07:07:16: Starting steps
+11-May-2018 07:07:41: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 07:07:41: Gen: 113: 
+11-May-2018 07:07:41: Initializing networks
+11-May-2018 07:07:41: Initializing remaining params
+11-May-2018 07:07:41: Starting steps
+11-May-2018 07:08:09: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 07:08:09: Gen: 114: 
+11-May-2018 07:08:09: Initializing networks
+11-May-2018 07:08:09: Initializing remaining params
+11-May-2018 07:08:09: Starting steps
+11-May-2018 07:08:39: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 07:08:39: Gen: 115: 
+11-May-2018 07:08:39: Initializing networks
+11-May-2018 07:08:39: Initializing remaining params
+11-May-2018 07:08:39: Starting steps
+11-May-2018 07:09:10: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 07:09:10: Gen: 116: 
+11-May-2018 07:09:10: Initializing networks
+11-May-2018 07:09:10: Initializing remaining params
+11-May-2018 07:09:10: Starting steps
+11-May-2018 07:09:36: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 07:09:36: Gen: 117: 
+11-May-2018 07:09:36: Initializing networks
+11-May-2018 07:09:36: Initializing remaining params
+11-May-2018 07:09:36: Starting steps
+11-May-2018 07:10:02: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 07:10:02: Gen: 118: 
+11-May-2018 07:10:02: Initializing networks
+11-May-2018 07:10:02: Initializing remaining params
+11-May-2018 07:10:02: Starting steps
+11-May-2018 07:10:29: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 07:10:29: Gen: 119: 
+11-May-2018 07:10:29: Initializing networks
+11-May-2018 07:10:29: Initializing remaining params
+11-May-2018 07:10:29: Starting steps
+11-May-2018 07:10:53: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 07:10:53: Gen: 120: 
+11-May-2018 07:10:53: Initializing networks
+11-May-2018 07:10:53: Initializing remaining params
+11-May-2018 07:10:53: Starting steps
+11-May-2018 07:11:19: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 07:11:19: Gen: 121: 
+11-May-2018 07:11:19: Initializing networks
+11-May-2018 07:11:19: Initializing remaining params
+11-May-2018 07:11:19: Starting steps
+11-May-2018 07:11:45: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 07:11:45: Gen: 122: 
+11-May-2018 07:11:45: Initializing networks
+11-May-2018 07:11:45: Initializing remaining params
+11-May-2018 07:11:45: Starting steps
+11-May-2018 07:12:12: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 07:12:12: Gen: 123: 
+11-May-2018 07:12:12: Initializing networks
+11-May-2018 07:12:12: Initializing remaining params
+11-May-2018 07:12:12: Starting steps
+11-May-2018 07:12:39: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 07:12:39: Gen: 124: 
+11-May-2018 07:12:39: Initializing networks
+11-May-2018 07:12:39: Initializing remaining params
+11-May-2018 07:12:39: Starting steps
+11-May-2018 07:13:07: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 07:13:07: Gen: 125: 
+11-May-2018 07:13:07: Initializing networks
+11-May-2018 07:13:07: Initializing remaining params
+11-May-2018 07:13:08: Starting steps
+11-May-2018 07:13:36: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 07:13:36: Gen: 126: 
+11-May-2018 07:13:36: Initializing networks
+11-May-2018 07:13:36: Initializing remaining params
+11-May-2018 07:13:36: Starting steps
+11-May-2018 07:14:05: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 07:14:05: Gen: 127: 
+11-May-2018 07:14:05: Initializing networks
+11-May-2018 07:14:05: Initializing remaining params
+11-May-2018 07:14:05: Starting steps
+11-May-2018 07:14:32: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 07:14:32: Gen: 128: 
+11-May-2018 07:14:32: Initializing networks
+11-May-2018 07:14:32: Initializing remaining params
+11-May-2018 07:14:32: Starting steps
+11-May-2018 07:14:59: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 07:14:59: Gen: 129: 
+11-May-2018 07:14:59: Initializing networks
+11-May-2018 07:14:59: Initializing remaining params
+11-May-2018 07:14:59: Starting steps
+11-May-2018 07:15:31: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 07:15:31: Gen: 130: 
+11-May-2018 07:15:31: Initializing networks
+11-May-2018 07:15:31: Initializing remaining params
+11-May-2018 07:15:31: Starting steps
+11-May-2018 07:15:59: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 07:15:59: Gen: 131: 
+11-May-2018 07:15:59: Initializing networks
+11-May-2018 07:15:59: Initializing remaining params
+11-May-2018 07:15:59: Starting steps
+11-May-2018 07:16:26: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 07:16:26: Gen: 132: 
+11-May-2018 07:16:26: Initializing networks
+11-May-2018 07:16:26: Initializing remaining params
+11-May-2018 07:16:26: Starting steps
+11-May-2018 07:16:52: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 07:16:52: Gen: 133: 
+11-May-2018 07:16:52: Initializing networks
+11-May-2018 07:16:52: Initializing remaining params
+11-May-2018 07:16:52: Starting steps
+11-May-2018 07:17:17: Best Fit: 47.504499    Distance: 47.504499    Collision: 0
+11-May-2018 07:17:17: Gen: 134: 
+11-May-2018 07:17:17: Initializing networks
+11-May-2018 07:17:17: Initializing remaining params
+11-May-2018 07:17:17: Starting steps

@@ -6,7 +6,7 @@ function a_continue_evolution(gen_id)
     %run_id = sprintf('%9.0f', rng_id);
     rng(737186582)
 
-    global draw; draw = true;
+    global draw; draw = false;
     global draw_refresh_rate; draw_refresh_rate = 0.001;
     global logger
 
@@ -28,7 +28,7 @@ function a_continue_evolution(gen_id)
     gen_id = gen_id + 1;
 
     a_evolve(Pop, settings, log_folder, gen_id, gen_id + settings.gen_count)
-    logger.debug(sprintf('End of simulation: %s', experiment));
+    logger.debug(sprintf('End of simulation: %s', log_folder));
 end
 
 function cd_here()

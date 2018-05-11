@@ -1,4 +1,5 @@
-function a_simulation(gen_id, relative_fits, init_position, target_position)
+function a_simulation(gen_id, relative_fits, init_position, target_position, ...
+    step_count)
     cd_here();
     add_paths();
 
@@ -35,6 +36,10 @@ function a_simulation(gen_id, relative_fits, init_position, target_position)
     
     if exist('target_position', 'var') && ~isempty(target_position)
         settings.targetPosition = reshape(target_position, [1, 1, 2]); 
+    end
+    
+    if exist('step_count', 'var') && ~isempty(step_count)
+       settings.step_count = step_count;
     end
     
     figure;

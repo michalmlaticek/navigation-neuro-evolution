@@ -5,6 +5,7 @@ function a_metric(start_gen, end_gen, to_csv)
     fits = [];
     metric_labels = [];
     metric_data = [];
+    pop_diversity = [];
 
 
     % load data
@@ -14,15 +15,18 @@ function a_metric(start_gen, end_gen, to_csv)
         data = data.data;    
         metric_labels = fieldnames(data);
         metric_labels(find(strcmpi(metric_labels, 'POP')), :) = []; % del 'Pop' label
+        
+        pop_diversity(i-start_gen+1, :) = size(unique(data.Pop, 'rows'), 1);
+        
         fit_label_idx = find(strcmpi(metric_labels, 'FIT'));
         if isempty(fit_label_idx)
             fit_label_idx = find(strcmpi(metric_labels, 'FITS'));
         end        
-        fits(i, :) = data.(metric_labels{fit_label_idx});
+        fits(i-start_gen+1, :) = data.(metric_labels{fit_label_idx});
         metric_labels(fit_label_idx, :) = [];
 
         for ml = 1:length(metric_labels)
-            metric_data(i, :, ml) = data.(metric_labels{ml});
+            metric_data(i-start_gen+1, :, ml) = data.(metric_labels{ml});
         end
     end
     
@@ -79,6 +83,17 @@ function a_metric(start_gen, end_gen, to_csv)
         legend([line1 line2 line3], [label1 label2 label3]);
         hold off
     end
+    
+    
+    % plot population diversity in each generation
+    f3 = figure('Name', sprintf('%s - Population diversity', extract_fit_title()), 'NumberTitle', 'off');
+    hold on
+    line = plot(pop_diversity, 'o', 'MarkerSize', 2); label = "Unique Genom Count";
+    xlim([0 inf]);
+    ylim([0 inf]);
+    legend(line, label);
+    hold off
+    
 end
 
 function cd_here()

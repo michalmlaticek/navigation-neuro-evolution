@@ -40,7 +40,7 @@ function data = a_fitness_path( ...
     rotations = zeros(1, pop_size);
 
     if draw
-       draw_map(map, cmap, robot_bodies, sensor_lines, start_positions, target_positions, [], true)
+       draw_map(map, cmap, robot_bodies, sensor_lines, start_positions, target_positions, []);
        pause(draw_refresh_rate);
     end
 
@@ -59,7 +59,7 @@ function data = a_fitness_path( ...
        collis = get_collisions(map, robot_bodies, robot_positions, dxys, d_speeds, robot.radius);
 
        if draw
-            draw_map(map, cmap, robot_bodies, sensor_lines, start_positions, target_positions, collis, true)
+            draw_map(map, cmap, robot_bodies, sensor_lines, start_positions, target_positions, collis);
             pause(draw_refresh_rate);
        end
 
@@ -120,7 +120,11 @@ function [d_angles, d_speeds] = extract_outputs(outs, max_speed)
     %d_angles = (outs(1, :) * 2 * pi) - pi;
     %d_speeds = outs(2, :) * max_speed;
     d_angles = outs(1, :) * pi;
-    d_speeds = (outs(2, :) + 1) * (max_speed/2);
+    %d_speeds = (outs(2, :) + 1) * (max_speed/2);
+    d_speeds = outs(2, :);
+    zero_idx = d_speeds < 0;
+    d_speeds(zero_idx) = 0;
+    d_speeds = d_speeds * max_speed; 
 end
 
 function [robot_angles, sensor_angles] = rotate(robot_angles, sensor_angles, rotation_angles)
