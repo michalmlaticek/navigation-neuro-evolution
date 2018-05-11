@@ -18,11 +18,11 @@ function a_metric(start_gen, end_gen, to_csv)
         if isempty(fit_label_idx)
             fit_label_idx = find(strcmpi(metric_labels, 'FITS'));
         end        
-        fits(i, :) = data.(metric_labels{fit_label_idx});
+        fits(i-start_gen+1, :) = data.(metric_labels{fit_label_idx});
         metric_labels(fit_label_idx, :) = [];
 
         for ml = 1:length(metric_labels)
-            metric_data(i, :, ml) = data.(metric_labels{ml});
+            metric_data(i-start_gen+1, :, ml) = data.(metric_labels{ml});
         end
     end
     

@@ -40,7 +40,7 @@ function data = a_fitness_path( ...
     rotations = zeros(1, pop_size);
 
     if draw
-       draw_map(map, cmap, robot_bodies, sensor_lines, start_positions, target_positions, []);
+       draw_map(map, cmap, robot_bodies, sensor_lines, start_positions, target_positions, [], true);
        pause(draw_refresh_rate);
     end
 
@@ -59,7 +59,7 @@ function data = a_fitness_path( ...
        collis = get_collisions(map, robot_bodies, robot_positions, dxys, d_speeds, robot.radius);
 
        if draw
-            draw_map(map, cmap, robot_bodies, sensor_lines, start_positions, target_positions, collis);
+            draw_map(map, cmap, robot_bodies, sensor_lines, start_positions, target_positions, collis, true);
             pause(draw_refresh_rate);
        end
 
@@ -80,7 +80,7 @@ function data = a_fitness_path( ...
     
     data = {};
     %%%% Fitness %%%%%%%
-    data.fits = 10*target_distances + 100*collisions + 0.0001*path_lens + 0.0001*rotations;
+    data.fits = 10*target_distances + 10*collisions + 0.0001*path_lens + 0.0001*rotations;
     data.distances = target_distances;
     data.collisions = collisions;
     data.path_lens = path_lens;
