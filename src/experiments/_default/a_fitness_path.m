@@ -12,6 +12,7 @@ function data = a_fitness_path( ...
     max_distance)
 
     global draw
+    global save_gif
     global draw_refresh_rate
     global logger
 
@@ -40,7 +41,7 @@ function data = a_fitness_path( ...
     rotations = zeros(1, pop_size);
 
     if draw
-       [im, map2draw] = draw_map(map, cmap, robot_bodies, sensor_lines, start_positions, target_positions, true);
+       [im, map2draw] = draw_map(map, cmap, robot_bodies, sensor_lines, start_positions, target_positions, [], save_gif);
        pause(draw_refresh_rate);
     end
 
@@ -59,7 +60,7 @@ function data = a_fitness_path( ...
        collis = get_collisions(map, robot_bodies, robot_positions, dxys, d_speeds, robot.radius);
 
        if draw
-            [im, map2draw] = draw_map(map, cmap, robot_bodies, sensor_lines, start_positions, target_positions, collis, true);
+            [im, map2draw] = draw_map(map, cmap, robot_bodies, sensor_lines, start_positions, target_positions, collis, save_gif);
             pause(draw_refresh_rate);
        end
 

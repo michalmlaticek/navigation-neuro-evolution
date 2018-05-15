@@ -13,6 +13,7 @@ function a_start_evolution()
     log_folder = sprintf('../../../logs/%s', experiment);
     
     global draw; draw = false;
+    global save_gif; save_gif = false;
     global draw_refresh_rate; draw_refresh_rate = 0.001;
     global logger; logger = Logger(log_folder, 'experiment.log');    
     

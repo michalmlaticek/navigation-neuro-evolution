@@ -7,12 +7,10 @@ function a_simulation(gen_id, relative_fits, init_position, target_position, ...
 
     %settings.step_count = 600;
 
-    global logger;
-    logger = Logger('', 'simulation-run.log');
-    global draw;
-    draw = true;
-    global draw_refresh_rate;
-    draw_refresh_rate = 0.1;
+    global logger; logger = Logger('', 'simulation-run.log');
+    global draw; draw = true;
+    global save_gif; save_gif = true;
+    global draw_refresh_rate; draw_refresh_rate = 0.1;
 
 
     %load population

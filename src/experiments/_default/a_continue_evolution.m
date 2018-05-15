@@ -6,12 +6,10 @@ function a_continue_evolution(gen_id)
     %run_id = sprintf('%9.0f', rng_id);
     %rng(rng_id)
 
-    global draw
-    global draw_refresh_rate
-    global logger
-
-    draw = false;
-    draw_refresh_rate = 0.001;
+    global draw; draw = false;
+    global save_gif; save_gif = false;
+    global draw_refresh_rate; draw_refresh_rate = 0.001;
+    global logger; 
 
     % Extract folder name, that serves as experiment root id
     log_folder = pwd;

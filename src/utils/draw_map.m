@@ -16,7 +16,7 @@ function [im, map2draw] = draw_map(map, cmap, bodies, sensor_lines, start, targe
     colormap(cmap);
     axis image
     
-    if exist('gif','var') && ~isempty(gif)
+    if exist('gif','var') && ~isempty(gif) && gif == true
        if exist('gif_name', 'var') && ~isempty(gif_name)
            if exist(gif_name, 'file') == 2
                imwrite(map2draw,cmap,sprintf('%s.gif', gif_name),'gif','DelayTime',0.1, 'WriteMode','append'); 

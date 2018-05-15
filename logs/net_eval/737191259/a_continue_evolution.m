@@ -24,14 +24,13 @@ function a_continue_evolution(gen_id)
     settings = load('settings');
     logger.debug(sprintf('Loading generation: %d', gen_id));
     data = load(sprintf('out-data-gen-%d', gen_id'));
-    Pop = data.data.Pop;
     
-    Pop = a_gen_pop(Pop, settings);
+    Pop = a_gen_pop(data.data, settings);
     
     gen_id = gen_id + 1;
 
     a_evolve(Pop, settings, log_folder, gen_id, gen_id + settings.gen_count)
-    logger.debug(sprintf('End of simulation: %s', experiment));
+    logger.debug(sprintf('End of simulation: %s', log_folder));
 end
 
 function cd_here()
